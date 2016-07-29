@@ -91,52 +91,95 @@
         font-size: 16px;
     }
 </style>
-<header>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand " href="__ROOT__">
-                    <img class="web-logo" src="__PUBLIC__/Home/images/logo.png">
-                </a>
+<!--IE探测-->
+
+
+<block class="header">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand " href="__ROOT__">
+                        <img class="web-logo" src="__PUBLIC__/Home/images/logo.png">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <think:nav name="nav">
+                        <eq name="nav.pid" value="0">
+                            <li>
+                                <a data-id="nav.id" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>"
+                                   data-toggle="show-child-menu" href="{$nav.url|get_nav_url}">
+                                    <!--正常-->
+                                    <div class="nav-title-first">{$nav.title}</div>
+                                    <div class="nav-title-show">Home</div>
+                                </a>
+                            </li>
+                            <eq name="nav.pid" value=""></eq>
+                        </eq>
+                    </think:nav>
+                </ul>
             </div>
-            <ul class="nav navbar-nav">
-                <think:nav name="nav">
-                    <eq name="nav.pid" value="0">
-                        <li>
-                            <a data-id="nav.id" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>"
-                               data-toggle="show-child-menu" href="{$nav.url|get_nav_url}">
-                                <!--正常-->
-                                <div class="nav-title-first">{$nav.title}</div>
-                                <div class="nav-title-show">Home</div>
-                            </a>
-                        </li>
-                        <eq name="nav.pid" value=""></eq>
-                    </eq>
-                </think:nav>
+        </nav>
+        <!--存放所有的-->
+        <div class="div-hidden navbar-child-item menu-item-3 navbar-fixed-top">
+            <ul class="list-group list-inline">
+                <li>景点</li>
+                <li>美食</li>
             </ul>
         </div>
-    </nav>
-    <!--存放所有的-->
-    <div class="div-hidden navbar-child-item menu-item-3 navbar-fixed-top">
-        <ul class="list-group list-inline">
-            <li>景点</li>
-            <li>美食</li>
-        </ul>
+
+        <script>
+
+            $(function () {
+
+                $("a[data-toggle='show-child-menu']").hover(function () {
+                    var showObj = $(".navbar-child-item.menu-item-3");
+                    showObj.slideDown(300);
+                }, function () {
+                    var showObj = $(".navbar-child-item.menu-item-3");
+                    showObj.hide();
+                });
+
+            })
+
+        </script>
+    </header>
+</block>
+<block class="banner">
+    <style>
+        .carousel-inner {
+            min-height: 400px;
+        }
+    </style>
+    <!--轮播图-->
+    <div id="banner" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="" alt="">
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <div class="carousel-caption">
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">上一张</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">下一张</span>
+        </a>
     </div>
+</block>
 
-    <script>
-
-        $(function () {
-
-            $("a[data-toggle='show-child-menu']").hover(function () {
-                var showObj = $(".navbar-child-item.menu-item-3");
-                showObj.slideDown(300);
-            }, function () {
-                var showObj = $(".navbar-child-item.menu-item-3");
-                showObj.hide();
-            });
-
-        })
-
-    </script>
-</header>
