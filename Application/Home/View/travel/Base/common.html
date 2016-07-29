@@ -4,18 +4,39 @@
 	<include file="Public/head"/>
 </head>
 <body>
-	<!-- 头部 -->
-	<include file="Public/header"/>
-	<!-- /头部 -->
-	
-	<!-- 主体 -->
-	<include file="Public/body"/>
-	<!-- /主体 -->
+<!-- 头部 -->
+<include file="Public/header"/>
+<!-- /头部 -->
 
-	<!-- 底部 -->
-	<include file="Public/footer"/>
-	<!-- /底部 -->
+<!-- 主体 -->
+<style>
 
+	#main-container.container {
+		background-color: #F4F8EE;
+		min-height: 400px;
+	}
 
+	body {
+		background-color: #EAE1CC;
+	}
+</style>
+<div id="main-container" class="container">
+	<block name="body">
+
+	</block>
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		$(window).resize(function () {
+			$("#main-container").css("min-height", $(window).height() - 343);
+		}).resize();
+	})
+</script>
+<!-- /主体 -->
+
+<!-- 底部 -->
+<include file="Public/footer"/>
+<!-- /底部 -->
 </body>
 </html>
