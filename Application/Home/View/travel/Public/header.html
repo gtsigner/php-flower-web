@@ -1,0 +1,142 @@
+<style>
+    .container {
+        width: 1170px !important;
+    }
+
+    .navbar {
+        margin-bottom: 0px;
+        border: none;
+        height: 100px;
+        background-color: #FFF7EF;
+        border-radius: 0px;
+    }
+
+    .navbar .container {
+        height: 100px;
+    }
+
+    .navbar .container .navbar-brand {
+        height: 80px;
+        /* padding: 15px 15px; */
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .navbar .navbar-header {
+        height: 80px;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .navbar .container .web-logo {
+        height: auto;
+        width: 200px;
+        overflow: hidden;
+    }
+
+    .navbar .navbar-nav {
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    .navbar .navbar-nav li {
+        height: 80px;
+        padding: 15px;
+        background-color: #FFF7EF;
+        margin-left: 5px;
+
+    }
+
+    .navbar .navbar-nav li > a {
+        text-align: center;
+        height: 50px;
+        color: #383838;
+        padding: 0px;
+    }
+
+    .navbar .navbar-nav li > a:hover {
+        color: #f64e31;
+    }
+
+    .navbar .navbar-nav li > a .nav-title-first {
+        font-size: 18px;
+        padding-top: 5px;
+        line-height: 25px;
+        font-family: 楷体;
+    }
+
+    .navbar .navbar-nav li > a .nav-title-show {
+        line-height: 15px;
+        font-size: 16px;
+        font-family: 楷体 Consolas;
+        padding-bottom: 5px;
+    }
+
+    .div-hidden {
+        display: none;
+    }
+
+    .navbar-child-item {
+        top: 100px;
+        height: 60px;
+        /*background-color: #F3F1EE;*/
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .navbar-child-item li {
+        line-height: 40px;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+</style>
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand " href="__ROOT__">
+                    <img class="web-logo" src="__PUBLIC__/Home/images/logo.png">
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <think:nav name="nav">
+                    <eq name="nav.pid" value="0">
+                        <li>
+                            <a data-id="nav.id" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>"
+                               data-toggle="show-child-menu" href="{$nav.url|get_nav_url}">
+                                <!--正常-->
+                                <div class="nav-title-first">{$nav.title}</div>
+                                <div class="nav-title-show">Home</div>
+                            </a>
+                        </li>
+                        <eq name="nav.pid" value=""></eq>
+                    </eq>
+                </think:nav>
+            </ul>
+        </div>
+    </nav>
+    <!--存放所有的-->
+    <div class="div-hidden navbar-child-item menu-item-3 navbar-fixed-top">
+        <ul class="list-group list-inline">
+            <li>景点</li>
+            <li>美食</li>
+        </ul>
+    </div>
+
+    <script>
+
+        $(function () {
+
+            $("a[data-toggle='show-child-menu']").hover(function () {
+                var showObj = $(".navbar-child-item.menu-item-3");
+                showObj.slideDown(300);
+            }, function () {
+                var showObj = $(".navbar-child-item.menu-item-3");
+                showObj.hide();
+            });
+
+        })
+
+    </script>
+</header>
