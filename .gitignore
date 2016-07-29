@@ -1,7 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
-### JetBrains template
-.idea/
-Runtime/
-
-
-
+.gitignore
+.idea/.name
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/php-flower-web.iml
+.idea/workspace.xml
