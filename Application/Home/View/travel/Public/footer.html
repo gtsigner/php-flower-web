@@ -1,8 +1,154 @@
 <!-- 底部
 ================================================== -->
+<style>
+
+    .footer {
+        background-color: #2f8bf6;
+        min-height: 100px;
+    }
+
+    .footer .container {
+        padding: 10px;
+    }
+
+    .footer .list-group {
+        margin-bottom: 10px;
+    }
+
+    .footer p {
+        font-size: 13px;
+        color: #fff;
+    }
+
+    .footer ul li a, .footer ul li {
+        color: #fff;
+        line-height: 20px;
+
+    }
+
+    .footer .list-inline > li {
+        padding: 0px 6px;
+        vertical-align: middle;
+    }
+
+    .footer ul .split-ver {
+        text-align: center;
+        width: 2px;
+        vertical-align: middle;
+        border-left: 2px solid #f1f4f5;
+        height: 15px;
+        padding: 0px;
+    }
+
+    .footer .copyright {
+        padding: 0px;
+    }
+
+    .footer .footer-left {
+        text-align: center;
+        padding: 0px;
+
+    }
+
+    .footer .footer-left a:hover {
+        color: #d6cda8;
+    }
+
+    /*右边*/
+    .footer .footer-right {
+        vertical-align: middle;
+    }
+
+    .footer .footer-right img {
+        height: 90px;
+        width: auto;
+    }
+
+    .footer .footer-right .icon-phone img {
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    .footer .footer-right .kefu label {
+        font-size: 20px;
+    }
+
+    .footer .footer-right .kefu p {
+        font-size: 25px;
+        color: #1f2daa;
+        margin-top: 14px;
+    }
+
+    .footer .end-bottom {
+        background-color: #2f74de;
+        width: 100% !important;
+    }
+
+    .footer .end-bottom p {
+        margin-bottom: 0px;
+        text-align: center;
+    }
+
+    .footer .end-bottom p span {
+        margin-left: 35px;
+    }
+</style>
 <footer class="footer">
     <div class="container">
-        <p> 本站由 <strong><a href="http://www.onethink.cn" target="_blank">OneThink</a></strong> 强力驱动</p>
+        <div class="row">
+            <div class="col-md-6 footer-left">
+                <ul class="list-group list-inline">
+                    <li><a href="#">关于我们</a></li>
+                    <li class="split-ver"></li>
+                    <li><a href="#">旅游项目</a></li>
+                    <li class="split-ver"></li>
+                    <li><a href="#">走近花海</a></li>
+                    <li class="split-ver"></li>
+                    <li><a href="#">旅游攻略</a></li>
+                    <li class="split-ver"></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li class="split-ver"></li>
+                    <li><a href="#">意见反馈</a></li>
+                    <li class="split-ver"></li>
+                    <li><a href="#">交通路线</a></li>
+                </ul>
+                <p>
+                    页面版权所有-{:C('WEB_SITE_COPYRIGHT')}
+                </p>
+                <p class="copyright">备案号：{:C('WEB_SITE_ICP')}</p>
+                <p>网站主办单位：宜宾市长宁县旅游管理局</p>
+
+            </div>
+            <div class="col-md-6 row footer-right">
+                <ul class="list-inline">
+                    <li class="text-center">
+                        <img src="__PUBLIC__/Home/images/qrcode-wechat.png">
+                        <br>
+                        <span class="qrcode-text">官方微信</span>
+                    </li>
+                    <li class="text-center">
+                        <img src="__PUBLIC__/Home/images/qrcode-weibo.png">
+                        <br>
+                        <span class="qrcode-text">官方微博</span>
+                    </li>
+                    <li class="icon-phone">
+                        <img src="__PUBLIC__/Home/images/icon-phone.png">
+                    </li>
+                    <li class="text-center kefu">
+                        <label>宜宾统一服务热线：</label>
+                        <p>{:C('WEB_SITE_FUWUPHONE')}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container end-bottom">
+        <p>
+            <span>地址：中国四川长宁县长宁镇</span>
+            <span>电话：0831-7249166 </span>
+            <span>花漫淯江景区内部应急救援电话：0831-7249006</span>
+            <span>违法和不良信息举报:86968709</span>
+        </p>
     </div>
 </footer>
 
