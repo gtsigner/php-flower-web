@@ -1,0 +1,228 @@
+/*zhaojunlike@ 全局基础样式*/
+body {
+    font-family: 楷体 Consolas;
+    background-color: #EAE1CC;
+}
+
+a {
+    outline: none;
+    cursor: pointer;
+}
+
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+.container {
+    width: 1170px !important;
+}
+
+#main-container.container {
+    background-color: #F4F8EE;
+    min-height: 400px;
+}
+
+/*******************************zhaojunlike@  header 部分 开始**************************************/
+.navbar {
+    margin-bottom: 0px;
+    border: none;
+    height: 100px;
+    background-color: #FFF7EF;
+    border-radius: 0px;
+}
+
+.navbar .container {
+    height: 100px;
+}
+
+.navbar .container .navbar-brand {
+    height: 80px;
+    /* padding: 15px 15px; */
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.navbar .navbar-header {
+    height: 80px;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar .container .web-logo {
+    height: auto;
+    width: 200px;
+    overflow: hidden;
+}
+
+.navbar .navbar-nav {
+    height: 80px;
+    margin-top: 10px;
+}
+
+.navbar .navbar-nav li {
+    height: 80px;
+    padding: 15px;
+    background-color: #FFF7EF;
+    margin-left: 5px;
+
+}
+
+.navbar .navbar-nav li > a {
+    text-align: center;
+    height: 50px;
+    color: #383838;
+    padding: 0px;
+}
+
+.navbar .navbar-nav li > a:hover {
+    color: #f64e31;
+}
+
+.navbar .navbar-nav li > a .nav-title-first {
+    font-size: 18px;
+    padding-top: 5px;
+    line-height: 25px;
+    font-family: 楷体;
+}
+
+.navbar .navbar-nav li > a .nav-title-show {
+    line-height: 15px;
+    font-size: 16px;
+    font-family: 楷体 Consolas;
+    padding-bottom: 5px;
+}
+
+.header .div-hidden {
+    display: none;
+}
+
+.header .navbar-child-item {
+    top: 100px;
+    height: 60px;
+    /*background-color: #F3F1EE;*/
+    background-color: #fff;
+    text-align: center;
+    opacity: .8;
+}
+
+.header .navbar-child-item li {
+    line-height: 40px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/*******************************zhaojunlike@  header 部分 结束**************************************/
+
+/*******************************zhaojunlike@  banner 部分 开始**************************************/
+.carousel-inner {
+    min-height: 400px;
+}
+
+.bid-banner-img {
+    width: 100%;
+    height: auto;
+}
+
+/*******************************zhaojunlike@  banner 部分 结束**************************************/
+
+/*******************************zhaojunlike@  footer 部分 开始**************************************/
+
+.footer {
+    background-color: #2f8bf6;
+    min-height: 100px;
+}
+
+.footer .container {
+    padding: 10px;
+}
+
+.footer .list-group {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 13px;
+    color: #fff;
+}
+
+.footer ul li a, .footer ul li {
+    color: #fff;
+    line-height: 20px;
+
+}
+
+.footer .list-inline > li {
+    padding: 0px 6px;
+    vertical-align: middle;
+}
+
+.footer ul .split-ver {
+    text-align: center;
+    width: 2px;
+    vertical-align: middle;
+    border-left: 2px solid #f1f4f5;
+    height: 15px;
+    padding: 0px;
+}
+
+.footer .copyright {
+    padding: 0px;
+}
+
+.footer .footer-left {
+    text-align: center;
+    padding: 0px;
+
+}
+
+.footer .footer-left a:hover {
+    color: #d6cda8;
+}
+
+/*右边*/
+.footer .footer-right {
+    vertical-align: middle;
+}
+
+.footer .footer-right img {
+    height: 90px;
+    width: auto;
+}
+
+.footer .footer-right .icon-phone img {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.footer .footer-right .kefu label {
+    font-size: 20px;
+}
+
+.footer .footer-right .kefu p {
+    font-size: 25px;
+    color: #1f2daa;
+    margin-top: 14px;
+}
+
+.footer .end-bottom {
+    background-color: #2f74de;
+    width: 100% !important;
+}
+
+.footer .end-bottom p {
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.footer .end-bottom p span {
+    margin-left: 35px;
+}
+
+/*******************************zhaojunlike@  footer 部分 结束**************************************/
