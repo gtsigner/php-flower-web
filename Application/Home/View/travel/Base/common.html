@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<include file="Public/head"/>
+    <include file="Public/head"/>
 </head>
 <body>
 <!-- 头部 -->
@@ -9,43 +9,18 @@
 <!-- /头部 -->
 
 <!-- 主体 -->
-<style>
-
-	#main-container.container {
-		background-color: #F4F8EE;
-		min-height: 400px;
-	}
-
-	body {
-		background-color: #EAE1CC;
-	}
-
-	a {
-		outline: none;
-		cursor: pointer;
-	}
-
-	a:focus {
-		outline: none;
-	}
-
-	a:hover {
-		outline: none;
-		text-decoration: none;
-	}
-</style>
 <div id="main-container" class="container">
-	<block name="body">
+    <block name="body">
 
-	</block>
+    </block>
 </div>
 
 <script type="text/javascript">
-	$(function () {
-		$(window).resize(function () {
-			$("#main-container").css("min-height", $(window).height() - 343);
-		}).resize();
-	})
+    $(function () {
+        $(window).resize(function () {
+            $("#main-container").css("min-height", $(window).height() - 343);
+        }).resize();
+    })
 </script>
 <!-- /主体 -->
 

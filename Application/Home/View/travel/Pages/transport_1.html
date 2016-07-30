@@ -1,80 +1,29 @@
+<!--公告页面-->
 <extend name="Base/common"/>
+
 <block name="style">
-
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/transport.css">
 </block>
+
 <block name="body">
-    <style>
-
-
-        body, #main-container, .main-body {
-            background-color: #FEF7EF;
-        }
-
-        .main-body {
-            padding: 20px 0px;
-
-        }
-
-        .main-body .main-left .nav-menu-bar {
-        }
-
-        .main-body .main-left h4 {
-            font-size: 30px;
-            border-bottom: 1px solid #c7c7c7;
-            padding: 20px 20px;
-            margin: 0px;
-        }
-
-        .main-body .main-left h4 a:hover {
-            color: #F48400;
-        }
-
-        .main-body .main-left h4 a {
-            color: #606060;
-            font-weight: 500;
-        }
-
-        .main-body .main-left .contact {
-            padding: 20px 10px;
-        }
-
-        .main-body .main-left .contact .bg {
-            background: url("__PUBLIC__/Home/images/bg/bg-contact.png") no-repeat;
-            background-size: 100% 100%;
-            height: 400px;
-            width: 100%;
-        }
-
-        .main-body .main-left .contact .phone-title {
-            text-align: left;
-            margin-left: 60px;
-            font-size: 20px;
-            padding-top: 60px;
-            color: #73716e;
-        }
-    </style>
     <div class="row main-body">
-        <div class="col-md-4 main-left">
-            <div class="text-center">
-                <img src="__PUBLIC__/Home/images/traffic.png">
-                <h4 class="nav-menu-bar"><a href="#">交通信息</a></h4>
-                <h4 class="nav-menu-bar"><a href="#">交通路线</a></h4>
-                <h4 class="nav-menu-bar"><a href="#">景区游览</a></h4>
-            </div>
-            <div class="contact">
-                <div class="bg">
-                    <p class="phone-title">联系电话:</p>
-                    <div>
-                        <img src="__PUBLIC__/Home/images/icon-phone.png">
-                        <span>{:C('WEB_SITE_FUWUPHONE')}</span>
-                    </div>
-                </div>
-            </div>
 
-        </div>
+
+        <include file="Pages/tran_left"/>
+
+
         <div class="col-md-8 main-right">
+            <div class="breadcrumb-head">
+                <ul class="list-inline">
+                    <li><span>当前位置：</span></li>
+                    <li><a href="#">首页</a></li>
+                    <li><span>></span></li>
+                    <li><a href="#">交通信息</a></li>
+                    <li><span>></span></li>
+                    <li class="active">Data</li>
+                </ul>
+            </div>
 
         </div>
     </div>
-
 </block>
