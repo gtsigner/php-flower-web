@@ -1,6 +1,6 @@
 /*zhaojunlike@ 全局基础样式*/
 body {
-    font-family: 楷体 Consolas;
+    font: 12px/1.5 "Microsoft YaHei";
     background-color: #EAE1CC;
 }
 
@@ -20,7 +20,7 @@ a:hover {
 }
 
 .container {
-    width: 1170px !important;
+    width: 1170px;
 }
 
 #main-container.container {
@@ -213,7 +213,7 @@ a:hover {
 
 .footer .end-bottom {
     background-color: #2f74de;
-    width: 100% !important;
+    width: 100%;
 }
 
 .footer .end-bottom p {
@@ -226,3 +226,18 @@ a:hover {
 }
 
 /*******************************zhaojunlike@  footer 部分 结束**************************************/
+
+/*******************************zhaojunlike@  路径导航 部分 Start**************************************/
+
+.breadcrumb-head {
+    border-bottom: 1px solid #8f8d89;
+    font-family: 楷体;
+    font-size: 13px;
+    padding: 0px 10px;
+}
+
+.breadcrumb-head .list-inline > li {
+    padding: 0px;
+}
+
+/*******************************zhaojunlike@  路径导航 部分 End**************************************/

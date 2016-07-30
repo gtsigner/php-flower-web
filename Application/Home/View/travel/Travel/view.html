@@ -1,0 +1,124 @@
+<extend name="Base/common"/>
+<block name="body">
+    <style>
+
+        #main-container {
+            background-color: #F4F8EE;
+        }
+
+        .travel {
+            padding-top: 10px;
+        }
+
+        .travel .breadcrumb-head {
+            border-bottom: none;
+            padding: 15px 20px;
+            font-size: 15px;
+        }
+
+        .travel .content-title {
+            border-bottom: 2px solid #f6723b;
+            margin-top: 20px;
+        }
+
+        .travel .content-title img {
+            height: 40px;
+        }
+
+        .travel .content-header {
+            margin-top: 20px;
+            padding: 10px 30px 10px;
+            background: #F3DEB1;
+            font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            color: #b65b31;
+
+        }
+
+        .travel .content-view-list {
+            padding: 20px;
+        }
+
+        .travel .content-view-list .view-item {
+            border: 1px solid #e0e0e0;
+            background-color: #fff;
+            padding: 5px 0px;
+            margin-bottom: 20px;
+        }
+
+        .travel .content-view-list .view-item .article-img-box {
+            padding-left: 5px;
+        }
+
+        .travel .content-view-list .view-item .article-img-box img {
+            height: 160px;
+            width: 100%;
+        }
+
+        .travel .content-view-list .view-item .view-detail {
+            padding-left: 0px;
+        }
+
+        .travel .content-view-list .view-item .article-title {
+            color: #000;
+            font-size: 18px;
+            font-weight: 600;
+            padding-left: 20px;
+        }
+
+        .travel .content-view-list .view-item .article-content {
+            padding-left: 20px;
+        }
+
+        .travel .content-view-list .view-item .btn-look-more {
+            position: absolute;
+            left: 300px;
+            bottom: 20px;
+            color: #ad0000;
+        }
+    </style>
+    <div class="travel">
+        <div class="row breadcrumb-head">
+            <ul class="list-inline">
+                <li><span>当前位置：</span></li>
+                <li><a href="#">首页</a></li>
+                <li><span>></span></li>
+                <li><a href="#">旅游项目</a></li>
+                <li><span>></span></li>
+                <li class="active">淯江美食</li>
+            </ul>
+        </div>
+        <include file="Widget/nav_food_imgs"/>
+        <!--title-->
+        <div class="row content-title">
+            <img src="__PUBLIC__/Home/images/travel/youyujiang.png"/>
+        </div>
+
+        <!--header-->
+        <div class="row content-header">
+            <span>景点推荐</span>
+        </div>
+
+        <!--推荐详情-->
+        <div class="row content-view-list">
+            <volist name="view_list" id="vo">
+                <div class="view-item col-xs-12">
+                    <div class="col-xs-3 article-img-box">
+                        <img class="img-lazy"
+                             src="__PUBLIC__/Home/images/loading.gif"
+                             data-original="{:get_cover($vo['cover_id'],'path')}"/>
+                    </div>
+                    <div class="col-xs-9 view-detail">
+                        <h4 class="article-title">{$vo.title}</h4>
+                        <p class="article-content">{$vo.description}</p>
+                    </div>
+                    <a class="btn-look-more" href="{:U('Travel/detail',array('id'=>$vo['id']))}">查看更多+</a>
+                </div>
+            </volist>
+        </div>
+
+        <div class="row page text-center">
+            {$page}
+        </div>
+    </div>
+</block>

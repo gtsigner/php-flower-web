@@ -20,6 +20,8 @@ $(function () {
         });
     });
 
+    $(".img-lazy").lazyload({effect: "fadeIn"});
+
     (function () {
         var $nav = $("#nav"), $current = $nav.children("[data-key=" + $nav.data("key") + "]");
         if ($nav.length) {

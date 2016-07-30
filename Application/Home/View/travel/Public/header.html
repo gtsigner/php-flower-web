@@ -34,7 +34,8 @@
         <div class="div-hidden navbar-child-item menu-item-3 navbar-fixed-top">
             <ul class="list-group list-inline">
                 <li>景点</li>
-                <li>美食</li>
+                <li><a href="{:U('Travel/view')}">美食</a></li>
+                <li><a href="{:U('Travel/eat')}">吃</a></li>
             </ul>
         </div>
 
@@ -42,16 +43,11 @@
 
             $(function () {
 
-                $("a[data-toggle='show-child-menu']").hover(function () {
+                $("a[data-toggle='show-child-menu']").mouseover(function () {
                     var showObj = $(".navbar-child-item.menu-item-3");
                     showObj.slideDown(300);
-                }, function () {
-                    var showObj = $(".navbar-child-item.menu-item-3");
-                    showObj.hide();
                 });
-
-            })
-
+            });
         </script>
     </header>
 </block>
