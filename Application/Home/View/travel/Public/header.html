@@ -1,4 +1,8 @@
 <style>
+    body {
+        font-family: 楷体 Consolas;
+    }
+
     .container {
         width: 1170px !important;
     }
@@ -73,29 +77,32 @@
         padding-bottom: 5px;
     }
 
-    .div-hidden {
+    .header .div-hidden {
         display: none;
     }
 
-    .navbar-child-item {
+    .header .navbar-child-item {
         top: 100px;
         height: 60px;
         /*background-color: #F3F1EE;*/
         background-color: #fff;
         text-align: center;
+        opacity: .8;
     }
 
-    .navbar-child-item li {
+    .header .navbar-child-item li {
         line-height: 40px;
         margin-top: 10px;
         font-size: 16px;
     }
+
+
 </style>
 <!--IE探测-->
 
 
 <block class="header">
-    <header>
+    <header class="header">
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
@@ -150,6 +157,11 @@
         .carousel-inner {
             min-height: 400px;
         }
+
+        .bid-banner-img {
+            width: 100%;
+            height: auto;
+        }
     </style>
     <!--轮播图-->
     <div id="banner" class="carousel slide" data-ride="carousel">
@@ -157,16 +169,15 @@
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="" alt="">
+                <img class="bid-banner-img" src="__PUBLIC__/Home/images/banner/banner-01.png" alt="">
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
-                <img src="" alt="">
+                <img class="bid-banner-img" src="__PUBLIC__/Home/images/banner/banner-01.png" alt="">
                 <div class="carousel-caption">
                 </div>
             </div>
