@@ -21,8 +21,13 @@ class PagesController extends HomeController
 {
 
 
-    public function transport()
+    /**
+     * 交通信息
+     * @param int $type
+     */
+    public function transport($type = 1)
     {
-        $this->display("Pages/transport_1");
+        $this->assign("type", $type);
+        $this->display("Pages/transport_" . $type);
     }
 }

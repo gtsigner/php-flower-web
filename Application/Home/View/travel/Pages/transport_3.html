@@ -1,0 +1,84 @@
+<!--公告页面-->
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/transport.css">
+</block>
+
+<block name="body">
+    <style>
+        .breadcrumb-head {
+            border-bottom: 2px solid #cacaca;
+        }
+
+        .main-body .map {
+            margin-top: 20px;
+        }
+
+        .main-body .message {
+            margin-top: 20px;
+            font-size: 18px;
+            padding-left: 20px;
+        }
+    </style>
+    <div class="row main-body">
+        <include file="Widget/tran_left"/>
+        <div class="col-xs-8 main-right">
+            <div class="breadcrumb-head">
+                <ul class="list-inline">
+                    <li><span>当前位置：</span></li>
+                    <li><a href="#">首页</a></li>
+                    <li><span>></span></li>
+                    <li><a href="#">交通信息</a></li>
+                    <li><span>></span></li>
+                    <li class="active">景区游览</li>
+                </ul>
+            </div>
+            <div class="map">
+                <img src="__PUBLIC__/Home/images/position-view.png">
+            </div>
+            <!--路线-->
+            <div class="message">
+                <p>
+                    缓缓拉开着一这脉脉青山，潺潺流水，花的世界，倒影在水中，属于淯江特有的建筑，田园村落，依稀可见，在这里，原理城市的喧嚣，环
+                    绕在周围的是青山、绿水、清新的空气，还有以及人与人之间最淳朴的诚恳相伴。
+                    <br/>
+                    <br/>
+                    景区景区，游览的景点依次是：
+                    <br/>
+                    <br/>
+                    ① 水转筒车—始于战国，兴于隋唐，工作的原理是借水力推动筒轮之后，竹筒自然兜水，循槽而上，自高处将谁导入水槽中灌溉农田的。
+                    <br/>
+                    <br/>
+                    ② 迎宾花园—迎宾花园位于花海正门入口，首先映入眼帘的是重达188吨的迎宾石，它来自“天下第一山”泰山，石龄已高达25亿年。
+                    <br/>
+                    <br/>
+                    ③ 欧式庭院—欧式庭院采用欧式独特设计风格，砖石并用，华贵有情调，主要包括廊架、植物迷宫、公主亭、喷泉、雕塑等，是停留休憩
+                    的好地方！
+                    <br/>
+                    <br/>
+                    ④ 情湖—情湖是园内最大的景观湖，占地25000平方米，岸边景观石带，全长2500米，可供游人倚坐嬉戏。据史记载，情湖原在明朝朱元璋
+                    时期就已被开挖，后经改造而成。
+                    <br/>
+                    <br/>
+                    ⑤ 月岛—从天空俯瞰月岛全貌，形似汉字的“月”字，故取名月岛。月岛北侧成片种植着薰衣草的近亲——柳叶马鞭草，摇曳的身姿，娇艳
+                    的花色，繁茂而长久的观赏期，代表着正义与期待，远看似一片紫色的海洋。
+                    <br/>
+                    <br/>
+                    ⑥ 日岛—从天空俯瞰日岛全貌，形似汉字“日”字，与月岛交相辉映。日岛上种有波斯菊，南侧是石榴树和紫薇。
+                    <br/>
+                    <br/>
+                    ⑦ 威汀广场—威汀广场里皮划艇码头、花海乐园，可供游人体验水上行船的的乐趣和尽情挥杆的快感。
+                    <br/>
+                    <br/>
+                    ⑧荷风园—荷风园内建有维多利亚咖啡屋、风车情侣馆和销售亭。户外婚礼、微博粉丝线下互动活动等都曾在这里举行。初夏时分，游人走
+                    在九曲桥上，满池的荷花与睡莲触手可及。
+                    <br/>
+                    <br/>
+                    ⑨ 千亩荷园—千亩荷园是以示荷花展示为主题的园区，依托用地特殊的地理条件，以人为本，以多重尺度和格局内容的水陆空间为主体，以
+                    与当地开展花文化环境与时代风貌相结合的“荷文化”为主题
+                </p>
+            </div>
+        </div>
+    </div>
+</block>
