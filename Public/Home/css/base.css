@@ -79,6 +79,7 @@ a:hover {
     height: 50px;
     color: #383838;
     padding: 0px;
+    background-color: #FFF7EF;
 }
 
 .navbar .navbar-nav li > a:hover {
@@ -103,19 +104,27 @@ a:hover {
     display: none;
 }
 
+/*下拉菜单*/
 .header .navbar-child-item {
     top: 100px;
     height: 60px;
-    /*background-color: #F3F1EE;*/
-    background-color: #fff;
+    background-color: rgba(81, 81, 81, 0.58);
     text-align: center;
-    opacity: .8;
 }
 
 .header .navbar-child-item li {
     line-height: 40px;
     margin-top: 10px;
+    padding: 0px 20px;
     font-size: 16px;
+}
+
+.header .navbar-child-item li a {
+    color: #fff;
+}
+
+.header .navbar-child-item li a:hover {
+    color: #f88043;
 }
 
 /*******************************zhaojunlike@  header 部分 结束**************************************/
