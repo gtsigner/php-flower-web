@@ -1,6 +1,60 @@
 <extend name="Base/common"/>
 
+
 <block name="body">
+
+    <style>
+        .main-rowMap {
+            background-color: rgba(239, 232, 222, 0.7);
+            height: 380px;
+        }
+
+        .rm-left {
+            background: url("__PUBLIC__/Home/images/index/indexIntroduce.png");
+            background-size: 100% 100%;
+            height: 380px;
+            width: 100%;
+        }
+
+        .rm-content {
+            width: 270px;
+            height: 350px;
+            text-align: left;
+            margin-left: 30px;
+            font-size: 20px;
+            padding-top: 120px;
+            float: left;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+
+        .main-rowProgram{
+            background-color: rgba(227,237,236, 0.7);
+            height: 480px;
+            margin-top: 10px;
+        }
+
+        .rp-background{
+            background: url("__PUBLIC__/Home/images/index/indexTitleBac.png");
+            background-size: 100% 100%;
+            height: 100px;
+            width: 100%;
+        }
+
+        .rp-circleSize{
+            width: 97%;
+        }
+
+        .rp-textStyle{
+            text-align: center;
+            margin-top: 5px;
+            font-size: 19px;
+            color: #CC1503;
+        }
+
+
+    </style>
+
     <!--路径导航-->
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
@@ -8,8 +62,99 @@
         <li class="active">Data</li>
     </ol>
 
+    <div class="row main-rowMap">
+        <!-- 内容map左边 -->
+        <div class="col-xs-4">
+            <div class="rm-left">
+                <div class="rm-content">
+                    宜宾，四川省地级市，国家历史文化名城，名酒五粮液，即产于这里，发达的酿酒工业使宜宾成为名副其实的“中国酒都”。 宜宾是长江上游开发最早、历史最悠久的城市之一。
+                </div>
+            </div>
+        </div>
 
+        <!-- 内容map右边 -->
+        <div class="col-xs-8">
+            <!--轮播图-->
+            <div class="masthead">
+                <div class="listing">
+                    <div id="banner" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img class="bid-banner-img" src="__PUBLIC__/Home/images/index/indexPic.png" alt="">
 
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img class="bid-banner-img" src="__PUBLIC__/Home/images/banner/banner-01.png" alt="">
+
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">上一张</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">下一张</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 旅游项目 -->
+    <div class="row main-rowProgram">
+        <div class="rp-background">
+        </div>
+        <div class="col-xs-2">
+            <img src="__PUBLIC__/Home/images/index/indexCircle_a.png" class="rp-circleSize"/>
+            <div class="rp-textStyle">
+            景点
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <img src="__PUBLIC__/Home/images/index/indexCircle_a.png" class="rp-circleSize" />
+            <div class="rp-textStyle">
+            美食
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <img src="__PUBLIC__/Home/images/index/indexCircle_a.png" class="rp-circleSize" />
+            <div class="rp-textStyle">
+                住宿
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <img src="__PUBLIC__/Home/images/index/indexCircle_a.png" class="rp-circleSize" />
+            <div class="rp-textStyle">
+                娱乐
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <img src="__PUBLIC__/Home/images/index/indexCircle_a.png" class="rp-circleSize" />
+            <div class="rp-textStyle">
+                导览
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <img src="__PUBLIC__/Home/images/index/indexCircle_a.png" class="rp-circleSize" />
+            <div class="rp-textStyle">
+                购物
+            </div>
+        </div>
+    </div>
 
 
 </block>
