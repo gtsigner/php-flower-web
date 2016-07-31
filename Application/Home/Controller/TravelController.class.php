@@ -23,7 +23,6 @@ class TravelController extends HomeController
         //42
         $map['category_id'] = 42;
         $map['status'] = 1;
-
         $pLimit = C("HOME_PAGE_LIMIT");
         $docModel = new DocumentModel();
         $totalCount = $docModel->listCount($map['category_id']);
@@ -34,7 +33,10 @@ class TravelController extends HomeController
         $this->display();
     }
 
-    public function detail()
+    /**
+     * 吃详情
+     */
+    public function eatDetail()
     {
         $map['id'] = I('id');
         $docModel = new DocumentModel();
@@ -44,8 +46,19 @@ class TravelController extends HomeController
     }
 
 
-    public function eat()
+    public function eat($p = 1)
     {
+        //42
+        $map['category_id'] = 42;
+        $map['status'] = 1;
+
+        $pLimit = C("HOME_PAGE_LIMIT");
+        $docModel = new DocumentModel();
+        $totalCount = $docModel->listCount($map['category_id']);
+        $pModel = new Page($totalCount, $pLimit);
+        $docList = $docModel->lists($map['category_id'], $p, $pLimit);
+        $this->assign('eat_list', $docList);
+        $this->assign('page', $pModel->show());
         $this->display();
     }
 

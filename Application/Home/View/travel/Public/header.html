@@ -14,39 +14,41 @@
                     </a>
                 </div>
                 <ul class="nav navbar-nav">
+                    <php>$pids=[];</php>
                     <think:nav name="nav">
+                        <!--爸爸-->
                         <eq name="nav.pid" value="0">
                             <li>
-                                <a data-id="nav.id" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>"
+                                <a data-id="{$nav.id}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>"
                                    data-toggle="show-child-menu" href="{$nav.url|get_nav_url}">
                                     <!--正常-->
                                     <div class="nav-title-first">{$nav.title}</div>
                                     <div class="nav-title-show">Home</div>
                                 </a>
                             </li>
-                            <eq name="nav.pid" value=""></eq>
                         </eq>
                     </think:nav>
                 </ul>
             </div>
         </nav>
-        <!--存放所有的-->
-        <div class="div-hidden navbar-child-item menu-item-3 navbar-fixed-top">
-            <ul class="list-group list-inline">
-                <li>景点</li>
-                <li><a href="{:U('Travel/view')}">美食</a></li>
-                <li><a href="{:U('Travel/eat')}">吃</a></li>
-            </ul>
-        </div>
+        <think:nav name="nav">
+            <eq name="nav.pid" value="0">
+                {:W("Public/hidMenu",array('pid'=>$nav['id']))}
+            </eq>
+        </think:nav>
 
         <script>
-
             $(function () {
 
                 $("a[data-toggle='show-child-menu']").mouseover(function () {
-                    var showObj = $(".navbar-child-item.menu-item-3");
-                    showObj.slideDown(300);
+                    var pid = $(this).attr('data-id');
+                    $(".navbar-child-item").hide();//影藏其他
+                    var showObj = $(".navbar-child-item.menu-item-" + pid);//下拉当前
+                    showObj.show(0);
                 });
+                $(".header").mouseleave(function () {
+                    $(".navbar-child-item").hide();//影藏其他
+                })
             });
         </script>
     </header>

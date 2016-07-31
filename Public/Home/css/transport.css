@@ -12,18 +12,22 @@ body, #main-container, .main-body {
 
 .main-body .main-left h4 {
     font-size: 30px;
-    border-bottom: 1px solid #c7c7c7;
+    border-bottom: 2px solid #989898;
     padding: 20px 20px;
     margin: 0px;
-}
-
-.main-body .main-left h4 a:hover {
-    color: #F48400;
 }
 
 .main-body .main-left h4 a {
     color: #606060;
     font-weight: 500;
+}
+
+.main-body .main-left h4 a.active {
+    color: #F48400;
+}
+
+.main-body .main-left h4 a:hover {
+    color: #F48400;
 }
 
 .main-body .main-left .contact {
@@ -75,7 +79,7 @@ body, #main-container, .main-body {
 .main-body .main-left .contact .bottom-split-line {
     width: 70%;
     min-height: 5px;
-    border-bottom: 1px solid #b4b1ad;
+    border-bottom: 2px solid #989898;
     margin-left: 15%;
 }
 
