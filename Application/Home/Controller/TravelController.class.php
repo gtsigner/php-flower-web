@@ -49,9 +49,8 @@ class TravelController extends HomeController
     public function eat($p = 1)
     {
         //42
-        $map['category_id'] = 42;
+        $map['category_id'] = 43;
         $map['status'] = 1;
-
         $pLimit = C("HOME_PAGE_LIMIT");
         $docModel = new DocumentModel();
         $totalCount = $docModel->listCount($map['category_id']);

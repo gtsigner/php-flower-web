@@ -1,0 +1,117 @@
+#main-container {
+    background-color: #F4F8EE;
+}
+
+.travel {
+    padding-top: 10px;
+}
+
+.travel .breadcrumb-head {
+    border-bottom: none;
+    padding: 15px 20px;
+    font-size: 15px;
+}
+
+.travel .content-title {
+    border-bottom: 2px solid #f6723b;
+    margin-top: 20px;
+}
+
+.travel .content-title img {
+    height: 40px;
+}
+
+.travel .content-header {
+    margin-top: 20px;
+    padding: 10px 30px 10px;
+    background: #F3DEB1;
+    font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: #b65b31;
+
+}
+
+/*游*/
+.travel .content-view-list {
+    padding: 20px;
+}
+
+.travel .content-view-list .view-item {
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    padding: 5px 0px;
+    margin-bottom: 20px;
+}
+
+.travel .content-view-list .view-item .article-img-box {
+    padding-left: 5px;
+}
+
+.travel .content-view-list .view-item .article-img-box img {
+    height: 160px;
+    width: 100%;
+}
+
+.travel .content-view-list .view-item .view-detail {
+    padding-left: 0px;
+}
+
+.travel .content-view-list .view-item .article-title {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.travel .content-view-list .view-item .article-content {
+    padding-left: 20px;
+}
+
+.travel .content-view-list .view-item .btn-look-more {
+    position: absolute;
+    left: 300px;
+    bottom: 20px;
+    color: #ad0000;
+}
+
+/*吃*/
+.travel .content-view-list {
+    padding: 10px;
+}
+
+.travel .content-view-list .foods-item {
+    text-align: center;
+    cursor: pointer;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+}
+
+.travel .content-view-list .foods-item .foods-img {
+    height: 200px;
+    width: 100%;
+}
+
+.travel .content-view-list .foods-item:hover .foods-hover-show {
+    height: 60px;
+    color: #fff;
+    line-height: 60px;
+}
+
+.travel .content-view-list .foods-hover-show-box {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.travel .content-view-list .foods-hover-show-box .foods-hover-show {
+    background-color: rgba(152, 152, 152, 0.37);
+    height: 30px;
+    transition: .4s height;
+    line-height: 30px;
+    color: #fff;
+}
+
+.travel .content-view-list .foods-hover-show-box .foods-hover-show .foods-name {
+    font-size: 18px;
+}
