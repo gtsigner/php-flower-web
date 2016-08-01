@@ -1,0 +1,19 @@
+<!--title-->
+<div class="row content-title">
+    <img src="__PUBLIC__/Home/images/travel/travel_eat.png"/>
+</div>
+<!--推荐详情-->
+<div class="row content-view-list">
+    <volist name="eat_list" id="vo">
+        <div class="col-xs-3 foods-item">
+            <img class="img-lazy foods-img"
+                 src="__PUBLIC__/Home/images/loading.gif"
+                 data-original="{:get_cover($vo['cover_id'],'path')}"/>
+            <div class="foods-hover-show-box">
+                <div class="foods-hover-show">
+                    <span class="foods-name">{$vo.title}</span>
+                </div>
+            </div>
+        </div>
+    </volist>
+</div>
