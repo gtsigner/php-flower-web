@@ -1,258 +1,267 @@
 <extend name="Base/common"/>
 <block name="body">
     <style>
-        h4{
+        h4 {
             color: #000;
         }
-        body{
-            background: white;
-        }
-        .container{
+
+        .container {
             padding: 0px;
         }
-        .row{
+
+        .container.banner {
+            width: 100%;
+        }
+
+        .row {
             margin-left: 0px;
             margin-right: 0px;
         }
-        .col-xs-1{
+
+        .col-xs-1 {
             padding: 0.5%;
-            border-right: 1px solid rgba(128,128,128,0.3);
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
         }
-        .jq-news-lan-logo{
-            width:170px;
+
+        .jq-news-lan-logo {
+            width: 170px;
             height: 50px;
             background-color: #D59E0D;
-            color:white;
+            color: white;
             font-family: 黑体;
             letter-spacing: 2px;
             font-size: 24px;
             margin-left: -15px;
             line-height: 50px;
         }
-        .jq-news-lan-logo span{
-            margin-left:20%;
+
+        .jq-news-lan-logo span {
+            margin-left: 20%;
         }
-        .jq-news-lan-nav{
+
+        .jq-news-lan-nav {
             font-family: 微软雅黑;
             text-align: right;
             line-height: 50px;
         }
-        .jq-news-lan-nav a{
+
+        .jq-news-lan-nav a {
             letter-spacing: 1px;
-            color:black;
+            color: black;
             font-family: 微软雅黑;
         }
-        .jq-news-lan-hr{
-            border: 1px solid rgba(128,128,128,0.2);
+
+        .jq-news-lan-hr {
+            border: 1px solid rgba(128, 128, 128, 0.2);
             margin-top: 0%;
             margin-bottom: 1%;
         }
 
-
-        .jq-news-travel-nav{
-            width:100%;
+        .jq-news-travel-nav {
+            width: 100%;
             font-size: 15px;
             text-align: center;
         }
-        .jq-news-travel-nav:hover{
+
+        /*****/
+        .jq-news-travel-nav:hover {
             background-color: #A00610;
         }
-        .jq-news-travel-nav a{
+
+        .jq-news-travel-nav a {
             color: black;
             font-family: "黑体";
             line-height: 15px;
         }
-        .jq-news-travel-nav:hover a{
-            color:white;
+
+        .jq-news-travel-nav:hover a {
+            color: white;
         }
-        .jq-news-travel-nav .img-logo{
+
+        .jq-news-travel-nav .img-logo {
             position: absolute;
             display: none;
         }
-        .jq-news-travel-nav:hover .img-logo{
-            margin:0 37.8%;
-            width:14%;
+
+        .jq-news-travel-nav:hover .img-logo {
+            margin: 0 37.8%;
+            width: 14%;
             display: block;
         }
-        .jq-news-travel-nav-show{
+
+        .jq-news-travel-nav.active .img-logo {
+            margin: 0 37.8%;
+            width: 14%;
+            display: block;
+        }
+
+        .jq-news-travel-nav.active a {
+            color: white;
+        }
+
+        .jq-news-travel-nav.active {
+            background-color: #A00610;
+        }
+
+        /*****/
+
+        .jq-news-travel-nav-show {
             display: none;
-            height:400px;
+            height: 400px;
             font-size: 14px;
             text-align: left;
             background: #F3F3F1;
         }
 
+        .jq-news-travel-nav-show.active {
+            display: block;
+        }
 
-        .jq-news-travel-nav-show img{
+        .jq-news-travel-nav-show img {
             height: 350px;
             margin: 1.9%;
         }
-        .jq-news-travel-nav-show h4:hover{
+
+        .jq-news-travel-nav-show h4:hover {
             color: #ac0609;
         }
-        .jq-news-travel-show ul{
+
+        .jq-news-travel-show ul {
             font-family: 微软雅黑;
             line-height: 25px;
             list-style-type: none;
         }
-        .jq-news-travel-show ul li h4{
+
+        .jq-news-travel-show ul li h4 {
             font-family: 黑体;
             font-weight: bold;
         }
 
-        .jq-news-content{
+        .jq-news-content {
             background: #F3F3F1;
             margin-top: 10px;
             width: 100%;
         }
-        .jq-news-content-show-details{
-            width:50%;
+
+        .jq-news-content-show-details {
+            width: 50%;
             float: left;
             padding: 0 2%;
         }
-        .jq-news-content-show-details-header h4{
+
+        .jq-news-content-show-details-header h4 {
             float: left;
         }
-        .jq-news-content-show-details-header hr{
+
+        .jq-news-content-show-details-header hr {
             /*254,151,20*/
             border: 1px dotted #FE9714;
             float: left;
             margin-left: 2%;
             width: 78%;
         }
-        .jq-news-content-show-details-header a{
+
+        .jq-news-content-show-details-header a {
             line-height: 40px;
             float: right;
-            color:#FE9714;
+            color: #FE9714;
         }
-        .jq-news-content-show-details-list{
-            width:100%;
+
+        .jq-news-content-show-details-list {
+            width: 100%;
         }
-        .jq-news-content-show-details-list a{
+
+        .jq-news-content-show-details-list a {
             font-size: 14px;
             color: #515151;
             font-family: 微软雅黑;
         }
-        .jq-news-content-show-details-list a:hover{
-            color:#ac0609 ;
+
+        .jq-news-content-show-details-list a:hover {
+            color: #ac0609;
         }
-        .jq-news-content-show-details-list strong{
+
+        .jq-news-content-show-details-list strong {
             float: right;
             margin-right: 3%;
         }
-        .jq-news-content-show-details-list li{
+
+        .jq-news-content-show-details-list li {
             float: left;
             margin-left: -3%;
-            width:105%;
+            width: 105%;
             line-height: 30px;
         }
 
-        .jq-news-content-gd{
-            width:100%;
+        .jq-news-content-gd {
+            width: 100%;
             height: 190px;
             margin: 3% 0;
             background-image: url(__PUBLIC__/Home/images/travel/jq-news-content-gd-bg.png);
         }
-        .jq-news-content-gd img{
+
+        .jq-news-content-gd img {
             margin-top: -0.8%;
             margin-left: 6%;
-            height:210px;
+            height: 210px;
             border-radius: 50%;
             border: 5px solid white;
         }
-        .jq-news-content-gd-show{
-            width:68%;
+
+        .jq-news-content-gd-show {
+            width: 68%;
             float: right;
             margin-top: 1%;
             margin-right: 2%;
         }
-        .jq-news-content-gd-show span{
-            color:#E04906;
+
+        .jq-news-content-gd-show span {
+            color: #E04906;
             font-family: 微软雅黑;
             font-size: 25px;
-            font-weight:bolder;
+            font-weight: bolder;
         }
-        .jq-news-content-gd-show p{
-            color:#A97D08;
+
+        .jq-news-content-gd-show p {
+            color: #A97D08;
             font-family: 微软雅黑;
             font-size: 16px;
             letter-spacing: 4px;
             line-height: 30px;
         }
 
-        .jq-news-content-gf{
+        .jq-news-content-gf {
             width: 100%;
-            hieght:110px;
+            hieght: 110px;
             float: left;
             padding: 2%;
             padding-bottom: 0.5%;
             margin-bottom: 2%;
-            border: 2px solid rgba(128,128,128,0.3);
+            border: 2px solid rgba(128, 128, 128, 0.3);
         }
-        .jq-news-content-gf-show{
+
+        .jq-news-content-gf-show {
             text-align: center;
             float: left;
-            width:20%;
+            width: 20%;
         }
-        .jq-news-content-gf-show a{
+
+        .jq-news-content-gf-show a {
             color: black;
             line-height: 35px;
             letter-spacing: 1px;
         }
-        .jq-news-content-gf-show img{
+
+        .jq-news-content-gf-show img {
             height: 115px;
         }
-        .jq-news-content-gf-show a:hover{
-            color:#ac0609 ;
+
+        .jq-news-content-gf-show a:hover {
+            color: #ac0609;
         }
     </style>
 
-    <script language="javascript">
-        function navfun(nav){
-            var navd = document.getElementById(nav);
-            navd.style.background="#A00610";
-        }
-        function afun(a){
-          var  ad = document.getElementById(a);
-            ad.style.color="white"
-        }
-        function imgfun(img){
-            var  imgd = document.getElementById(img);
-            imgd.style.margin="0 37.8%";
-            imgd.style.width="14%";
-            imgd.style.display="block";
-        }
-        function showfun(show){
-            var  showd = document.getElementById(show);
-            showd.style.width = "100%";
-            showd.style.display = "block";
-        }
-        function show(id){
-            var nav = "nav";
-            var a = "a";
-            var img = "img"
-            var show = "show";
 
-            nav += id;
-            a += id;
-            img += id;
-            show += id;
-
-            afun(a);
-            imgfun(img);
-            navfun(nav);
-            showfun(show);
-        }
-        function hidother(no){
-            var i=1;
-            for(i;i<5;i++){
-                if(i != no){
-
-                }
-            }
-        }
-
-    </script>
     <div class="jq-news">
 
         <!--景区动态和所在位置-->
@@ -269,40 +278,40 @@
                         <a href="#">景区动态</a> > <a href="#">花漫淯江</a>
                     </div>
                 </div>
-             </div>
+            </div>
         </div>
         <hr class="jq-news-lan-hr"/>
 
         <!--景区新闻、旅游新闻等-->
         <div class="row">
             <div class="col-xs-1">
-                <div class="jq-news-travel-nav" id="nav1">
-                    <a id="a1" onclick="show(1)">景区新闻</a>
-                    <img class="img-logo" id="img1" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                <div class="jq-news-travel-nav active">
+                    <a class="change" data-toggle="show-1">景区新闻</a>
+                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
                 </div>
             </div>
             <div class="col-xs-1">
-                <div class="jq-news-travel-nav" id="nav2">
-                    <a id="a2" onclick="show(2)">旅游新闻</a>
-                    <img class="img-logo" id="img2" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                <div class="jq-news-travel-nav">
+                    <a class="change" data-toggle="show-2">旅游新闻</a>
+                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
                 </div>
             </div>
             <div class="col-xs-1">
-                <div class="jq-news-travel-nav" id="nav3">
-                    <a id="a3" onclick="show(3)">营销活动</a>
-                    <img class="img-logo" id="img3" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                <div class="jq-news-travel-nav">
+                    <a class="change" data-toggle="show-3">营销活动</a>
+                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
                 </div>
             </div>
             <div class="col-xs-1">
-                <div class="jq-news-travel-nav" id="nav4">
-                    <a id="a4" onclick="show(4)">专题活动</a>
-                    <img class="img-logo" id="img4" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                <div class="jq-news-travel-nav">
+                    <a class="change" data-toggle="show-4">专题活动</a>
+                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
                 </div>
             </div>
         </div>
         <!--内容页-->
-        <div class="jq-news-travel-nav-show" id="show1" >
-            <div class="row" >
+        <div class="jq-news-travel-nav-show active" id="show-1">
+            <div class="row">
                 <div class="col-xs-6">
                     <div class="jq-news-travel-img">
                         <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
@@ -340,8 +349,27 @@
                 </div>
             </div>
         </div>
-        <div class="jq-news-travel-nav-show" id="show2" >
-            <div class="row" >
+        <div class="jq-news-travel-nav-show" id="show-2">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-img">
+                        <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-show">
+                        <ul>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jq-news-travel-nav-show" id="show-3">
+            <div class="row">
                 <div class="col-xs-6">
                     <div class="jq-news-travel-img">
                         <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
@@ -358,68 +386,13 @@
                                 <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
                                 <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
                             </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="jq-news-travel-nav-show" id="show3" >
-            <div class="row" >
-                <div class="col-xs-6">
-                    <div class="jq-news-travel-img">
-                        <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
-                    </div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="jq-news-travel-show">
-                        <ul>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                            <li>
-                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="jq-news-travel-nav-show" id="show4" >
-            <div class="row" >
+        <div class="jq-news-travel-nav-show" id="show-4">
+            <div class="row">
                 <div class="col-xs-6">
                     <div class="jq-news-travel-img">
                         <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
@@ -557,10 +530,10 @@
 
             <!--官方新闻-->
             <div class="jq-news-content-gf">
-                    <div class="jq-news-content-gf-show">
-                        <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/><br/>
-                        <a href="#">长宁管理局看望县景区开发...</a>
-                    </div>
+                <div class="jq-news-content-gf-show">
+                    <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/><br/>
+                    <a href="#">长宁管理局看望县景区开发...</a>
+                </div>
                 <div class="jq-news-content-gf-show">
                     <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/><br/>
                     <a href="#">长宁管理局看望县景区开发...</a>
@@ -579,8 +552,23 @@
                 </div>
             </div>
         </div>
+        <script language="javascript">
 
+            $(function () {
+                $("a.change").bind('click', function () {
 
+                    $(".jq-news-travel-nav-show.active").removeClass("active");
+                    $(".jq-news-travel-nav.active").removeClass("active");
+
+                    var toggle = $(this).attr("data-toggle");
+                    console.log(toggle);
+                    $(this).addClass("active");
+                    $("#" + toggle).addClass("active");
+
+                });
+            })
+
+        </script>
 
     </div>
 </block>
