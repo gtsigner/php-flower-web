@@ -1,0 +1,31 @@
+<!--title-->
+<style>
+    .travel .content-title.travel-play {
+        border-bottom: 2px solid #2C0ABC;
+    }
+
+    .travel .content-view-list.travel-play .foods-item .foods-img {
+        height: 240px;
+    }
+
+    .travel .travel-play .item-title {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+</style>
+<div class="row content-title travel-play">
+    <img src="__PUBLIC__/Home/images/travel/travel_play.png"/>
+</div>
+<!--推荐详情-->
+<div class="row content-view-list travel-play">
+    <volist name="play_list" id="vo">
+        <div class="col-xs-4 foods-item">
+            <img class="img-lazy foods-img"
+                 src="__PUBLIC__/Home/images/loading.gif"
+                 data-original="{:get_cover($vo['cover_id'],'path')}"/>
+            <div class="item-title">
+                <span class="title">{$vo.title}</span>
+            </div>
+        </div>
+    </volist>
+</div>

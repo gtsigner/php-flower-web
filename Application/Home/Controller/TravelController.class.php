@@ -17,7 +17,17 @@ use Think\Page;
 class TravelController extends HomeController
 {
 
-    //游玩
+    //旅游项目
+    public function index()
+    {
+        //4个组件就行了
+
+        $this->display();
+
+    }
+
+
+    //景点
     public function view($p = 1)
     {
         //42
@@ -33,9 +43,7 @@ class TravelController extends HomeController
         $this->display();
     }
 
-    /**
-     * 吃详情
-     */
+    //吃
     public function eatDetail()
     {
         $map['id'] = I('id');
@@ -46,6 +54,7 @@ class TravelController extends HomeController
     }
 
 
+    //吃
     public function eat($p = 1)
     {
         //42

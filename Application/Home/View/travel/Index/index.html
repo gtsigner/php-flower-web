@@ -4,179 +4,224 @@
 <block name="body">
 
     <style>
-        .main-rowMap {
-            background-color: rgba(239, 232, 222, 0.7);
-            height: 380px;
+        body {
+            background: url("__PUBLIC__/Home/images/bg-index.jpg");
         }
 
-        .rm-left {
+        #main-container.container {
+            background-color: transparent;
+        }
+
+        .main-rowMap {
+            background-color: rgba(236, 237, 239, 0.9);
+        }
+
+        .main-rowMap .rm-left {
             background: url("__PUBLIC__/Home/images/index/indexIntroduce.png");
             background-size: 100% 100%;
             height: 380px;
             width: 100%;
         }
 
-        .rm-content {
-            width: 270px;
+        .main-rowMap .rm-left .rm-content {
             height: 350px;
             text-align: left;
-            margin-left: 30px;
-            font-size: 20px;
-            padding-top: 120px;
+            font-size: 14px;
             float: left;
+            padding: 120px 50px;
             word-wrap: break-word;
             word-break: normal;
         }
+
+        .main-rowMap .bid-show-img {
+            height: 380px;
+        }
+
+        .main-rowMap .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+            height: 380px;
+        }
+
+        .main-rowMap .carousel-indicators {
+            background-color: rgba(82, 82, 82, 0.73);
+            position: absolute;
+            bottom: 10px;
+            z-index: 15;
+            width: 100%;
+            text-align: center;
+            list-style: none;
+            left: 30%;
+            padding: 10px 20px;
+        }
+
+        /*第一部分结束*/
 
         .main-rowProgram {
-            background-color: rgba(227, 237, 236, 0.7);
-            height: 480px;
+            background-color: rgba(231, 241, 236, 0.94);
             margin-top: 10px;
+            padding-top: 20px;
+            padding-bottom: 15px;
         }
 
-        .rp-background {
-            background: url("__PUBLIC__/Home/images/index/indexTitleBac.png");
-            background-size: 100% 100%;
-            height: 100px;
+        .main-rowProgram .col-xs-2 {
+            margin-bottom: 20px;
+        }
+
+        .main-rowProgram .col-xs-2 img {
+            border: 10px solid #f2dede;
+            border-radius: 100%;
+            transition: .3s;
             width: 100%;
+            height: 100%;
         }
 
-        .rp-circleSize {
-            width: 97%;
-        }
-
-        .rp-textStyle {
+        .main-rowProgram .col-xs-2 .rp-textStyle {
             text-align: center;
-            margin-top: 5px;
-            font-size: 19px;
-            color: #CC1503;
+            font-size: 18px;
+            color: #D34132;
         }
 
-        .rp-rectangle {
-            width: 80%;
-            padding: 10px;
+        .main-rowProgram .col-xs-2 img:hover {
+            border: 10px solid #cbb7b7;
+        }
+
+        .main-rowProgram .col-xs-3 img {
+            height: auto;
+
+        }
+
+        .main-rowProgram .col-xs-3 .title {
             margin-top: 10px;
-            margin-left: 30px;
-        }
-
-        .rp-textStyleRec {
             text-align: center;
-            margin-top: 5px;
-            font-size: 19px;
-            color: #010101;
-            font-weight: bold;
+            font-size: 16px;
         }
 
+        /**项目**/
         .main-rowDetail {
-            background-color: rgba(233, 230, 204, 0.7);
-            height: 120px;
+            background-color: rgba(233, 230, 204, 0.8);
             margin-top: 10px;
-            word-wrap: break-word;
-            word-break: normal;
-            font-size: 19px;
+            font-size: 16px;
             padding: 20px;
         }
 
+        /**结束介绍**/
+
         .main-rowSpecial {
-            background-color: rgba(251, 216, 175, 0.7);
-            height: 360px;
+            background-color: rgba(251, 216, 175, 0.9);
             margin-top: 10px;
-            position:relative;
+            position: relative;
         }
 
-        .rs-top {
-            background: url("__PUBLIC__/Home/images/index/specialTop.png");
+        .main-rowSpecial .col-xs-2 {
+            padding: 10px 15px 30px;
+        }
+
+        .main-rowSpecial .col-xs-2 img {
+            height: 100%;
+            width: 100%;
+            border-radius: 100%;
+        }
+
+        .main-rowSpecial .rs-top {
+            background: url("__PUBLIC__/Home/images/index/bg-special-top.png");
             background-size: 100% 100%;
             margin-top: -15px;
-            height: 90px;
+            height: 50px;
             width: 100%;
         }
 
-        .rs-flowerDetail {
-            text-align: center;
-            margin-top: 5px;
-            font-size: 13px;
-            color: #746454;
-        }
-
-        .rs-flowerDetailMore {
-            text-align: right;
-            font-size: 13px;
-            color: #E5374E;
-        }
-
-        .rs-botton{
-            background: url("__PUBLIC__/Home/images/index/specialBotton.png");
+        .main-rowSpecial .rs-botton {
+            background: url("__PUBLIC__/Home/images/index/bg-special-top.png");
             background-size: 100% 100%;
-            height: 30px;
             width: 100%;
-            position:absolute;
-            bottom:-25px;
+            height: 50px;
+            position: absolute;
+            bottom: -15px;
+        }
+
+        .main-rowSpecial .rp-textStyleRec {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .main-rowSpecial .rs-flowerDetail {
+            padding: 10px 2px;
+        }
+
+        .main-rowSpecial .rs-flowerDetailMore {
+            text-align: right;
+        }
+
+        .main-rowSpecial .rs-flowerDetailMore a {
+            color: #D34132;
         }
 
         .main-rowNews {
-            background-color: rgba(226,235,230, 0.7);
-            height: 360px;
+            background-color: rgba(226, 234, 228, 0.92);
             margin-top: 30px;
-            position:relative;
+            padding-top: 20px;
+            min-height: 300px;
         }
 
+        /*通用标题*/
+        .top-title .bg-flower-left img, .top-title .bg-flower-right img {
+            height: 20px;
+            width: 100%;
+        }
 
+        .top-title {
+            margin: 0px;
+        }
+
+        .top-title .title-center {
+            margin-top: -15px;
+
+        }
+
+        .top-title .title-en {
+            font-size: 19px;
+            padding: 0px;
+        }
+
+        .top-title .title-zn {
+            font-size: 24px;
+        }
     </style>
-
-    <!--路径导航-->
-    <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Library</a></li>
-        <li class="active">Data</li>
-    </ol>
 
     <div class="row main-rowMap">
         <!-- 内容map左边 -->
         <div class="col-xs-4">
             <div class="rm-left">
                 <div class="rm-content">
-                    宜宾，四川省地级市，国家历史文化名城，名酒五粮液，即产于这里，发达的酿酒工业使宜宾成为名副其实的“中国酒都”。 宜宾是长江上游开发最早、历史最悠久的城市之一。
+                    &jmath;花漫淯江，位于四川省宜宾市长宁县长宁
+                    镇占地约500亩，总投资约2000万元。项
+                    目地势高低起伏，精选郁金香、蝴蝶兰、
+                    虞美人、紫罗兰、三色堇、雏菊等近20
+                    个极具观赏性花卉品种，结合精致的园
+                    艺小品，立体展现大自然田园风貌，让
+                    您更亲近，感受田园乡村情怀。
                 </div>
             </div>
         </div>
 
         <!-- 内容map右边 -->
-        <div class="col-xs-8">
-            <!--轮播图-->
-            <div class="masthead">
-                <div class="listing">
-                    <div id="banner" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        </ol>
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img class="bid-banner-img" src="__PUBLIC__/Home/images/index/indexPic.png" alt="">
-
-                                <div class="carousel-caption">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img class="bid-banner-img" src="__PUBLIC__/Home/images/banner/banner-01.png" alt="">
-
-                                <div class="carousel-caption">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
-                           data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">上一张</span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
-                           data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">下一张</span>
-                        </a>
+        <div class="col-xs-8 masthead">
+            <div id="show-img" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#show-img" data-slide-to="0" class="active"></li>
+                    <li data-target="#show-img" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img class="bid-show-img img-responsive"
+                             src="__PUBLIC__/Home/images/banner/banner-2.png"
+                             alt="">
+                    </div>
+                    <div class="item">
+                        <img class="bid-show-img img-responsive"
+                             src="__PUBLIC__/Home/images/banner/banner-1.png"
+                             alt="">
                     </div>
                 </div>
             </div>
@@ -187,179 +232,217 @@
     <div class="row main-rowProgram">
         <div class="rp-background">
         </div>
-        <div class="col-xs-2">
-            <img  data-original="__PUBLIC__/Home/images/index/indexCircle_a.png" class="lazy rp-circleSize"/>
+        <!--标题通用-->
+        <div class="top-title row">
+            <div class="col-xs-5 bg-flower-left">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+            <div class="col-xs-2 title-center text-center">
+                <div class="title-en">Tourism Projects</div>
+                <label class="title-zn">旅游项目</label>
+            </div>
+            <div class="col-xs-5 bg-flower-right">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+        </div>
 
+        <div class="col-xs-2">
+            <img data-original="__PUBLIC__/Home/images/index/service-play.png" class="img-lazy img-responsive"/>
             <div class="rp-textStyle">
                 景点
             </div>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/indexCircle_a.png" class="lazy rp-circleSize"/>
-
+            <img data-original="__PUBLIC__/Home/images/index/service-eat.png" class="img-lazy img-responsive"/>
             <div class="rp-textStyle">
                 美食
             </div>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/indexCircle_a.png" class="lazy rp-circleSize"/>
-
+            <img data-original="__PUBLIC__/Home/images/index/service-live.png" class="img-lazy img-responsive"/>
             <div class="rp-textStyle">
                 住宿
             </div>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/indexCircle_a.png" class="lazy rp-circleSize"/>
-
-            <div class="rp-textStyle">
-                娱乐
-            </div>
+            <a href="#">
+                <img data-original="__PUBLIC__/Home/images/index/service-yu.png" class="img-lazy img-responsive"/>
+                <div class="rp-textStyle">
+                    娱乐
+                </div>
+            </a>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/indexCircle_a.png" class="lazy rp-circleSize"/>
-
+            <img data-original="__PUBLIC__/Home/images/index/service-view.png" class="img-lazy img-responsive"/>
             <div class="rp-textStyle">
                 导览
             </div>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/indexCircle_a.png" class="lazy rp-circleSize"/>
-
+            <img data-original="__PUBLIC__/Home/images/index/service-buy.png" class="img-lazy img-responsive"/>
             <div class="rp-textStyle">
                 购物
             </div>
         </div>
 
+        <!---->
         <div class="col-xs-3">
-            <img data-original="__PUBLIC__/Home/images/index/indexRectangle.png" class="lazy rp-rectangle"/>
-
-            <div class="rp-textStyleRec">
+            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/programe-1.jpg">
+            <div class="title">
                 长宁公园
             </div>
         </div>
         <div class="col-xs-3">
-            <img data-original="__PUBLIC__/Home/images/index/indexRectangle.png" class="lazy rp-rectangle"/>
-
-            <div class="rp-textStyleRec">
+            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/programe-2.jpg">
+            <div class="title">
                 长宁鲜花市场
             </div>
         </div>
         <div class="col-xs-3">
-            <img data-original="__PUBLIC__/Home/images/index/indexRectangle.png" class="lazy rp-rectangle"/>
-
-            <div class="rp-textStyleRec">
+            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/programe-3.jpg">
+            <div class="title">
                 长宁植物园
             </div>
         </div>
         <div class="col-xs-3">
-            <img data-original="__PUBLIC__/Home/images/index/indexRectangle.png" class="lazy rp-rectangle"/>
-
-            <div class="rp-textStyleRec">
+            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/programe-4.jpg">
+            <div class="title">
                 长宁花园
             </div>
         </div>
+
     </div>
 
+    <!--介绍-->
     <div class="row main-rowDetail">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长宁县位于四川盆地南缘，宜宾市腹心地带，位于四川盆地与云贵高原的过渡带[3]
-        ，东临江安，南界兴文、西与高县、珙县交邻，并紧靠宜珙铁路，北与南溪区、宜宾市相连。地理坐标为东经104°44′22″～105°03′30″，北纬28°15′18″～28°47′48″[1]
-        ，南北长约60公里，东西宽30公里，全县辐员面积1000.2平方公里。
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            长宁公园位于宜宾市长宁县长宁镇，占地32公顷，拥有“欧洲花园”之称。长宁公园建于2014年，种植药草香料等烹调食用的植物，因此将此地命名为“Keu
+            kenhof”，也就是英文中的keuken(厨房)和hof(花园)合起来之意。的景观设计以英式风格为主而雏型，直到1949年一群花农此地规划成一个开放空间的花卉公
+            园，至今已成为国际知名的花园典范，也是民众来荷兰阿姆斯特丹赏花的热门观光景点。每年3月初至6月，在这个世界上最大的郁金香公园所在地库肯霍夫会举办
+            盛大的郁金香花展。
+        </p>
     </div>
 
+    <!--特色-->
     <div class="row main-rowSpecial">
         <div class="rs-top">
         </div>
-        <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/specialCircle.png" class="lazy rp-circleSize"/>
+        <!--标题通用-->
+        <div class="top-title row">
+            <div class="col-xs-4 col-xs-offset-4 title-center text-center">
+                <div class="title-en">FEATURES OF SCENIC SPOT</div>
+                <label class="title-zn">景区特色</label>
+            </div>
+        </div>
 
+        <div class="col-xs-2">
+            <img data-original="__PUBLIC__/Home/images/index/special-1.png"
+                 class="img-lazy img-responsive"/>
             <div class="rp-textStyleRec">
                 郁金香
             </div>
-
             <div class="rs-flowerDetail">
                 郁金香，百合科郁金香属的草本植物，是土耳其、哈萨克斯坦、荷兰的国花。
             </div>
             <div class="rs-flowerDetailMore">
-                查看详情<<
+                <a href="#">查看详情<<</a>
             </div>
         </div>
-        <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/specialCircle.png" class="lazy rp-circleSize"/>
 
+        <div class="col-xs-2">
+            <img data-original="__PUBLIC__/Home/images/index/special-2.png"
+                 class="img-lazy img-responsive"/>
             <div class="rp-textStyleRec">
                 郁金香
             </div>
-
             <div class="rs-flowerDetail">
                 郁金香，百合科郁金香属的草本植物，是土耳其、哈萨克斯坦、荷兰的国花。
             </div>
             <div class="rs-flowerDetailMore">
-                查看详情<<
+                <a href="#">查看详情<<</a>
             </div>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/specialCircle.png" class="lazy rp-circleSize"/>
-
+            <img data-original="__PUBLIC__/Home/images/index/special-3.png"
+                 class="img-lazy img-responsive"/>
             <div class="rp-textStyleRec">
                 郁金香
             </div>
-
             <div class="rs-flowerDetail">
                 郁金香，百合科郁金香属的草本植物，是土耳其、哈萨克斯坦、荷兰的国花。
             </div>
             <div class="rs-flowerDetailMore">
-                查看详情<<
+                <a href="#">查看详情<<</a>
             </div>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/specialCircle.png" class="lazy rp-circleSize"/>
-
+            <img data-original="__PUBLIC__/Home/images/index/special-4.png"
+                 class="img-lazy img-responsive"/>
             <div class="rp-textStyleRec">
                 郁金香
             </div>
-
             <div class="rs-flowerDetail">
                 郁金香，百合科郁金香属的草本植物，是土耳其、哈萨克斯坦、荷兰的国花。
             </div>
             <div class="rs-flowerDetailMore">
-                查看详情<<
+                <a href="#">查看详情<<</a>
             </div>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/specialCircle.png" class="lazy rp-circleSize"/>
-
+            <img data-original="__PUBLIC__/Home/images/index/special-5.png"
+                 class="img-lazy img-responsive"/>
             <div class="rp-textStyleRec">
                 郁金香
             </div>
-
             <div class="rs-flowerDetail">
                 郁金香，百合科郁金香属的草本植物，是土耳其、哈萨克斯坦、荷兰的国花。
             </div>
             <div class="rs-flowerDetailMore">
-                查看详情<<
+                <a href="#">查看详情<<</a>
             </div>
         </div>
         <div class="col-xs-2">
-            <img data-original="__PUBLIC__/Home/images/index/specialCircle.png" class="lazy rp-circleSize"/>
-
+            <img data-original="__PUBLIC__/Home/images/index/special-6.png"
+                 class="img-lazy img-responsive"/>
             <div class="rp-textStyleRec">
                 郁金香
             </div>
-
             <div class="rs-flowerDetail">
                 郁金香，百合科郁金香属的草本植物，是土耳其、哈萨克斯坦、荷兰的国花。
             </div>
             <div class="rs-flowerDetailMore">
-                查看详情<<
+                <a href="#">查看详情<<</a>
             </div>
         </div>
+
+        <!---->
         <div class="rs-botton">
         </div>
     </div>
 
     <div class="row main-rowNews">
+        <!--标题通用-->
+        <div class="top-title row">
+            <div class="col-xs-5 bg-flower-left">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+            <div class="col-xs-2 title-center text-center">
+                <div class="title-en">SCENIC NEWS</div>
+                <label class="title-zn">景区新闻</label>
+            </div>
+            <div class="col-xs-5 bg-flower-right">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+        </div>
+
 
     </div>
 
+    <div class="row main-rowService">
 
+    </div>
+    <div class="row main-rowTraffic">
+
+    </div>
 </block>

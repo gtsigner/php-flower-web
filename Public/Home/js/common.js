@@ -20,6 +20,7 @@ $(function () {
         });
     });
 
+    //
     $("img.img-lazy").lazyload({effect: "fadeIn"});
 
     (function () {
