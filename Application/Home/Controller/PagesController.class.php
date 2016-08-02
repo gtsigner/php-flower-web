@@ -44,4 +44,5 @@ class PagesController extends HomeController
         $this->assign('detail', $detail);
         $this->display();
     }
+
 }

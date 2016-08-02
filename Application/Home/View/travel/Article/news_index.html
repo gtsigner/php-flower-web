@@ -553,21 +553,16 @@
             </div>
         </div>
         <script language="javascript">
-
             $(function () {
                 $("a.change").bind('click', function () {
-
                     $(".jq-news-travel-nav-show.active").removeClass("active");
                     $(".jq-news-travel-nav.active").removeClass("active");
-
                     var toggle = $(this).attr("data-toggle");
                     console.log(toggle);
                     $(this).addClass("active");
                     $("#" + toggle).addClass("active");
-
                 });
             })
-
         </script>
 
     </div>
