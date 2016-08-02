@@ -50,7 +50,6 @@
 
 
         .jq-news-travel-nav{
-            position:relative;
             width:100%;
             font-size: 15px;
             text-align: center;
@@ -71,61 +70,22 @@
             display: none;
         }
         .jq-news-travel-nav:hover .img-logo{
-            margin:0 43%;
+            margin:0 37.8%;
             width:14%;
             display: block;
         }
         .jq-news-travel-nav-show{
-            position: absolute;
             display: none;
             height:400px;
             font-size: 14px;
             text-align: left;
-            margin-top: 1%;
             background: #F3F3F1;
         }
-        .jq-news-travel-nav:hover .jq-news-travel-nav-show{
-            margin-top: 15px;
-            width:1370%;
-            display: block;
-        }
 
-        .jq-news-travel-nav-end{
-            position: relative;
-            margin:0.6% -1%;
-            width:10%;
-            font-size: 15px;
-            text-align: center;
-        }
-        .jq-news-travel-nav-end:hover{
-            background-color: #A00610;
-        }
-        .jq-news-travel-nav-end a{
-            color: black;
-            font-family: "黑体";
-            line-height: 15px;
-        }
-        .jq-news-travel-nav-end:hover a{
-            color:white;
-        }
-        .jq-news-travel-nav-end .img-logo{
-            position: absolute;
-            display: none;
-        }
-        .jq-news-travel-nav-end:hover .img-logo{
-            margin:0 43%;
-            width:14%;
-            display: block;
-        }
-        .jq-news-travel-nav-end:hover .jq-news-travel-nav-show{
-            margin-top: 15px;
-            width:1370%;
-            display: block;
-        }
 
         .jq-news-travel-nav-show img{
-            width:100%;
-            height:auto;
+            height: 350px;
+            margin: 1.9%;
         }
         .jq-news-travel-nav-show h4:hover{
             color: #ac0609;
@@ -142,7 +102,7 @@
 
         .jq-news-content{
             background: #F3F3F1;
-            margin-top: 410px;
+            margin-top: 10px;
             width: 100%;
         }
         .jq-news-content-show-details{
@@ -246,6 +206,53 @@
             color:#ac0609 ;
         }
     </style>
+
+    <script language="javascript">
+        function navfun(nav){
+            var navd = document.getElementById(nav);
+            navd.style.background="#A00610";
+        }
+        function afun(a){
+          var  ad = document.getElementById(a);
+            ad.style.color="white"
+        }
+        function imgfun(img){
+            var  imgd = document.getElementById(img);
+            imgd.style.margin="0 37.8%";
+            imgd.style.width="14%";
+            imgd.style.display="block";
+        }
+        function showfun(show){
+            var  showd = document.getElementById(show);
+            showd.style.width = "100%";
+            showd.style.display = "block";
+        }
+        function show(id){
+            var nav = "nav";
+            var a = "a";
+            var img = "img"
+            var show = "show";
+
+            nav += id;
+            a += id;
+            img += id;
+            show += id;
+
+            afun(a);
+            imgfun(img);
+            navfun(nav);
+            showfun(show);
+        }
+        function hidother(no){
+            var i=1;
+            for(i;i<5;i++){
+                if(i != no){
+
+                }
+            }
+        }
+
+    </script>
     <div class="jq-news">
 
         <!--景区动态和所在位置-->
@@ -269,182 +276,183 @@
         <!--景区新闻、旅游新闻等-->
         <div class="row">
             <div class="col-xs-1">
-                <div class="jq-news-travel-nav">
-                    <a >景区新闻</a>
-                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
-                    <div class="jq-news-travel-nav-show">
-                        <div class="row" >
-                            <div class="col-xs-6">
-                                <div class="jq-news-travel-img">
-                                    <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="jq-news-travel-show">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="jq-news-travel-nav" id="nav1">
+                    <a id="a1" onclick="show(1)">景区新闻</a>
+                    <img class="img-logo" id="img1" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
                 </div>
             </div>
             <div class="col-xs-1">
-                <div class="jq-news-travel-nav">
-                    <a href="#">旅游新闻</a>
-                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
-                    <div class="jq-news-travel-nav-show" style="left:-115%">
-                        <div class="row" >
-                            <div class="col-xs-6">
-                                <div class="jq-news-travel-img">
-                                    <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="jq-news-travel-show">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="jq-news-travel-nav" id="nav2">
+                    <a id="a2" onclick="show(2)">旅游新闻</a>
+                    <img class="img-logo" id="img2" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
                 </div>
             </div>
             <div class="col-xs-1">
-                <div class="jq-news-travel-nav">
-                    <a href="#">营销活动</a>
-                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
-                    <div class="jq-news-travel-nav-show" style="left:-230%">
-                        <div class="row" >
-                            <div class="col-xs-6">
-                                <div class="jq-news-travel-img">
-                                    <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="jq-news-travel-show">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                <div class="jq-news-travel-nav" id="nav3">
+                    <a id="a3" onclick="show(3)">营销活动</a>
+                    <img class="img-logo" id="img3" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <div class="jq-news-travel-nav" id="nav4">
+                    <a id="a4" onclick="show(4)">专题活动</a>
+                    <img class="img-logo" id="img4" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                </div>
+            </div>
+        </div>
+        <!--内容页-->
+        <div class="jq-news-travel-nav-show" id="show1" >
+            <div class="row" >
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-img">
+                        <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-show">
+                        <ul>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-9">
-                <div class="jq-news-travel-nav-end">
-                    <a href="#">专题活动</a>
-                    <img  class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
-                    <div class="jq-news-travel-nav-show" style="left:-345%">
-                        <div class="row" >
-                            <div class="col-xs-6">
-                                <div class="jq-news-travel-img">
-                                    <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="jq-news-travel-show">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                        <li>
-                                            <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
-                                            <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+        </div>
+        <div class="jq-news-travel-nav-show" id="show2" >
+            <div class="row" >
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-img">
+                        <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-show">
+                        <ul>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jq-news-travel-nav-show" id="show3" >
+            <div class="row" >
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-img">
+                        <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-show">
+                        <ul>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jq-news-travel-nav-show" id="show4" >
+            <div class="row" >
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-img">
+                        <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-show">
+                        <ul>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                            <li>
+                                <a href="#"><h4>淯江景区污水处理厂成功培养细菌处理污水</h4></a>
+                                <p>淯江景区污水处理厂地处高寒地带，每年冬天气温过低，BAF曝气罐内细菌会...</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
