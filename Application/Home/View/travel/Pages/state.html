@@ -1,0 +1,72 @@
+<!--公告页面-->
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/transport.css">
+</block>
+
+<block name="body">
+    <style>
+        /*通用标题*/
+        .top-title .bg-flower-left img, .top-title .bg-flower-right img {
+            height: 20px;
+            width: 100%;
+        }
+
+        .top-title {
+            margin: 0px;
+        }
+
+        .top-title .title-center {
+            margin-top: -15px;
+
+        }
+
+        .top-title .title-en {
+            font-size: 19px;
+            padding: 0px;
+        }
+
+        .top-title .title-zn {
+            font-size: 24px;
+        }
+
+        .breadcrumb-head {
+            border: none;
+        }
+
+        #main-container.container {
+            background-color: #FEF7EF;
+        }
+
+        .content {
+            padding-top: 20px;
+        }
+    </style>
+    <div class="row">
+        <div class="breadcrumb-head">
+            <ul class="list-inline">
+                <li><span>当前位置：</span></li>
+                <li><a href="__ROOT__">首页</a></li>
+                <li><span>></span></li>
+                <li class="active"><a href="#">景区状况</a></li>
+            </ul>
+        </div>
+
+        <div class="top-title row">
+            <div class="col-xs-5 bg-flower-left">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+            <div class="col-xs-2 title-center text-center">
+                <div class="title-en">SCENIC STATE</div>
+                <label class="title-zn">景区状况</label>
+            </div>
+            <div class="col-xs-5 bg-flower-right">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        {$detail.content}
+    </div>
+</block>

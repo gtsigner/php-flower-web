@@ -10,6 +10,7 @@
  */
 
 namespace Home\Controller;
+use Home\Model\DocumentModel;
 
 
 /**
@@ -35,8 +36,12 @@ class PagesController extends HomeController
     /**
      * 景区概况
      */
-    public function survey()
+    public function state($id = 46)
     {
+
+        $docModel = new DocumentModel();
+        $detail = $docModel->detail($id);
+        $this->assign('detail', $detail);
         $this->display();
     }
 }
