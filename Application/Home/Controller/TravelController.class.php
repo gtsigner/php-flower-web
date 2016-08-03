@@ -11,6 +11,7 @@
 
 namespace Home\Controller;
 
+use Home\Model\CategoryModel;
 use Home\Model\DocumentModel;
 use Think\Page;
 
@@ -27,30 +28,42 @@ class TravelController extends HomeController
     }
 
 
-    //景点
-    public function view($p = 1)
+    /**
+     * 列表页面
+     * @param $cat_id
+     * @param int $p
+     */
+    public function lists($cat_id, $p = 1)
     {
-        //42
-        $map['category_id'] = 42;
+        $map['category_id'] = $cat_id;
         $map['status'] = 1;
         $pLimit = C("HOME_PAGE_LIMIT");
         $docModel = new DocumentModel();
         $totalCount = $docModel->listCount($map['category_id']);
         $pModel = new Page($totalCount, $pLimit);
         $docList = $docModel->lists($map['category_id'], $p, $pLimit);
-        $this->assign('view_list', $docList);
+        $cateModel = new CategoryModel();
+        $cateInfo = $cateModel->info($map['category_id']);
+
+
+        $this->assign('data_list', $docList);
+        $this->assign('category', $cateInfo);
         $this->assign('page', $pModel->show());
-        $this->display();
+        $this->display($cateInfo['template_lists']);
     }
 
     //吃
-    public function eatDetail()
+    public function detail()
     {
         $map['id'] = I('id');
         $docModel = new DocumentModel();
         $detail = $docModel->detail($map['id']);
+
+        $catModel = new CategoryModel();
+        $cateInfo = $catModel->info($detail['category_id']);
         $this->assign('detail', $detail);
-        $this->display();
+        $this->assign('category', $cateInfo);
+        $this->display($cateInfo['template_detail']);
     }
 
 
