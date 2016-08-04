@@ -10,6 +10,7 @@
  */
 
 namespace Home\Controller;
+
 use Home\Model\DocumentModel;
 
 
@@ -31,7 +32,6 @@ class PagesController extends HomeController
         $this->assign("type", $type);
         $this->display("Pages/transport_" . $type);
     }
-
 
     /**
      * 景区概况

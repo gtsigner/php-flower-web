@@ -117,6 +117,7 @@ class ArticleController extends HomeController
     }
 
 
+    //新闻
     public function news()
     {
         $this->display("news_index");
