@@ -3,7 +3,7 @@ namespace Home\Controller;
 
 class ViewController extends HomeController
 {
-    public function jq_news()
+    public function news_details()
     {
         $this->display();
     }
