@@ -1,0 +1,60 @@
+<extend name="Base/common"/>
+<block name="body">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/travel.css"/>
+    <div class="travel">
+
+        <div class="row breadcrumb-head">
+            <ul class="list-inline">
+                <li><span>当前位置：</span></li>
+                <li><a href="#">首页</a></li>
+                <li><span>></span></li>
+                <li><a href="#">旅游项目</a></li>
+                <li><span>></span></li>
+                <li class="active">淯江美食</li>
+            </ul>
+        </div>
+        <include file="Widget/nav_food_imgs"/>
+
+        <!--title-->
+        <div class="row content-title">
+            <img src="__PUBLIC__/Home/images/travel/youyujiang.png"/>
+        </div>
+
+        <!--header-->
+        <div class="row content-header">
+            <span>美食推荐</span>
+        </div>
+
+        <!--推荐详情-->
+        <div class="row content-view-list">
+            <volist name="data_list" id="vo">
+                <div class="col-xs-3 foods-item">
+                    <img class="img-lazy foods-img"
+                         src="__PUBLIC__/Home/images/loading.gif"
+                         data-original="{:get_cover($vo['cover_id'],'path')}"/>
+                    <div class="foods-hover-show-box">
+                        <div class="foods-hover-show">
+                            <span class="foods-name">{$vo.title}</span>
+                        </div>
+                    </div>
+                </div>
+            </volist>
+        </div>
+        <!--header-->
+        <div class="row content-header">
+            <span>景区内餐饮</span>
+        </div>
+
+        <div class="row content-view-list">
+            <div class="col-xs-3 foods-item">
+                <img class="img-lazy foods-img" src="__PUBLIC__/Home/images/foods/foods_1.png">
+                <div class="foods-hover-show-box">
+                    <div class="foods-hover-show">
+                        <span class="foods-name">白砍鸡</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</block>

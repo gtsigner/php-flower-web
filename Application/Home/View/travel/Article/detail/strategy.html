@@ -1,0 +1,330 @@
+<extend name="Base/common"/>
+<block name="body">
+
+    <style>
+        body {
+            background-color: #F3F3F1;
+        }
+
+        #main-container.container {
+            background-color: #F3F3F1;
+
+        }
+
+        h4 {
+            color: #000;
+        }
+
+        .container {
+            padding: 0px;
+        }
+
+        .container.banner {
+            width: 100%;
+        }
+
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .col-xs-1 {
+            padding: 0.5%;
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        .jq-news {
+        }
+
+        .jq-news-lan-logo {
+            width: 170px;
+            height: 50px;
+            background-color: #D59E0D;
+            color: white;
+            font-family: 黑体;
+            letter-spacing: 2px;
+            font-size: 24px;
+            margin-left: -15px;
+            line-height: 50px;
+        }
+
+        .jq-news-lan-logo span {
+            margin-left: 20%;
+        }
+
+        .jq-news-lan-nav {
+            font-family: 微软雅黑;
+            text-align: right;
+            line-height: 50px;
+        }
+
+        .jq-news-lan-nav a {
+            letter-spacing: 1px;
+            color: black;
+            font-family: 微软雅黑;
+        }
+
+        .jq-news-lan-hr {
+            border: 1px solid rgba(128, 128, 128, 0.2);
+            margin-top: 0%;
+            margin-bottom: 1%;
+        }
+
+        .jq-news-travel-nav {
+            width: 100%;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        /*****/
+        .jq-news-travel-nav:hover {
+            background-color: #A00610;
+        }
+
+        .jq-news-travel-nav a {
+            color: black;
+            font-family: "黑体";
+            line-height: 15px;
+        }
+
+        .jq-news-travel-nav:hover a {
+            color: white;
+        }
+
+        .jq-news-travel-nav .img-logo {
+            position: absolute;
+            display: none;
+        }
+
+        .jq-news-travel-nav:hover .img-logo {
+            margin: 0 37.8%;
+            width: 14%;
+            display: block;
+        }
+
+        .jq-news-travel-nav.active .img-logo {
+            margin: 0 37.8%;
+            width: 14%;
+            display: block;
+        }
+
+        .jq-news-travel-nav.active a {
+            color: white;
+        }
+
+        .jq-news-travel-nav.active {
+            background-color: #A00610;
+        }
+
+        .jq-news-travel-nav-show {
+            display: none;
+            height: 400px;
+            font-size: 14px;
+            text-align: left;
+            background: #F3F3F1;
+        }
+
+        .jq-news-travel-nav-show.active {
+            display: block;
+        }
+
+        .jq-news-travel-nav-show img {
+            height: 350px;
+            margin: 1.9%;
+        }
+
+        .jq-news-travel-nav-show h4:hover {
+            color: #ac0609;
+        }
+
+        .jq-news-travel-show ul {
+            font-family: 微软雅黑;
+            line-height: 25px;
+            list-style-type: none;
+        }
+
+        .jq-news-travel-show ul li h4 {
+            font-family: 黑体;
+            font-weight: bold;
+        }
+
+        .jq-news-content {
+            background: #F3F3F1;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .jq-news-content-show-details-header h4 {
+            float: left;
+        }
+
+        .jq-news-content-show-details-header a {
+            line-height: 40px;
+            float: right;
+            color: #FE9714;
+        }
+
+        .jq-news-content-show-details-list a {
+            font-size: 14px;
+            color: #515151;
+            font-family: 微软雅黑;
+        }
+
+        .jq-news-content-show-details-list a:hover {
+            color: #ac0609;
+        }
+
+        .jq-news-content-show-details-list strong {
+            float: right;
+            margin-right: 3%;
+        }
+
+        .jq-news-content-show-details-list li {
+            float: left;
+            margin-left: -3%;
+            width: 105%;
+            line-height: 30px;
+        }
+
+        .jq-news-content-gd {
+            width: 100%;
+            height: 190px;
+            margin: 3% 0;
+            background-image: url('__PUBLIC__/Home/images/travel/jq-news-content-gd-bg.png');
+        }
+
+        .jq-news-content-gd img {
+            margin-top: -0.8%;
+            margin-left: 6%;
+            height: 210px;
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
+        .jq-news-content-gd-show {
+            width: 68%;
+            float: right;
+            margin-top: 1%;
+            margin-right: 2%;
+        }
+
+        .jq-news-content-gd-show span {
+            color: #E04906;
+            font-family: 微软雅黑;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        .jq-news-content-gd-show p {
+            color: #A97D08;
+            font-family: 微软雅黑;
+            font-size: 16px;
+            letter-spacing: 2px;
+            line-height: 26px;
+        }
+
+        .jq-news-content-gf {
+            width: 100%;
+            hieght: 110px;
+            margin-top: 40px;
+            float: left;
+
+            padding: 10px;
+            margin-bottom: 2%;
+            border: 2px solid rgba(128, 128, 128, 0.65);
+        }
+
+        .jq-news-content-gf-show {
+            text-align: center;
+            float: left;
+            width: 20%;
+        }
+
+        .jq-news-content-gf-show a {
+            color: black;
+            line-height: 35px;
+            letter-spacing: 1px;
+        }
+
+        .jq-news-content-gf-show img {
+            height: 115px;
+        }
+
+        .jq-news-content-gf-show a:hover {
+            color: #ac0609;
+        }
+
+        .main-article .container p span {
+            padding: 5px 10px;
+        }
+
+        .main-article .detail-header {
+            border-bottom: 1px dotted #717373;
+            padding-bottom: 10px;
+        }
+
+        #contents {
+            padding: 30px;
+            min-height: 500px;
+        }
+
+        .detail-footer a {
+            font-size: 16px;
+        }
+
+        .detail-footer {
+            height: 100px;
+        }
+
+        .detail-footer .title {
+            font-size: 16px;
+            color: #000;
+        }
+    </style>
+
+    <div class="jq-news">
+        <!--景区动态和所在位置-->
+        <div class="row">
+            <div class="jq-news-lan">
+                <div class="col-xs-4">
+                    <div class="jq-news-lan-logo">
+                        <span>旅游攻略</span>
+                    </div>
+                </div>
+                <div class="col-xs-5 col-xs-offset-3">
+                    <div class="jq-news-lan-nav">
+                        <a>当前位置：</a> <a href="#"> 首页</a> > <a href="{:U('Article/strategy')}">旅游攻略</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jq-news-content main-article">
+        <div class="container">
+            <div class="detail-header">
+                <h2 class="text-center">{$info.title}</h2>
+                <p class="text-center">
+                    <span class="author">来源：{$info.uid|get_username}</span>
+                    <span> 发表于：{$info.create_time|date='Y-m-d H:i',###}</span>
+                    <span> 浏览次数：{$info.view}</span>
+                </p>
+            </div>
+            <section id="contents">{$info.content}</section>
+            <div class="detail-footer">
+                <span class="pull-left">
+                    <div>
+                        <article:prev name="prev" info="info">
+                        <a href="{:U('?id='.$prev['id'])}"><span class="title">上一篇：</span><span>{$info.title}</span></a>
+                        </article:prev>
+                    </div>
+                    <div>
+                        <article:next name="next" info="info">
+                        <a href="{:U('?id='.$next['id'])}"><span class="title">下一篇：</span><span>{$info.title}</span></a>
+                        </article:next>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</block>

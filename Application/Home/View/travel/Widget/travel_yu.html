@@ -3,18 +3,28 @@
     .travel .content-title.travel-yu {
         border-bottom: 2px solid #D62B1C;
     }
+
+    .travel .content-title.travel-yu .more {
+        color: #D62B1C;
+    }
+
+    .travel .content-view-list.travel-yu .foods-item .foods-img {
+        height: 200px;
+    }
 </style>
 <div class="row content-title travel-yu">
     <img src="__PUBLIC__/Home/images/travel/travel_yu.png"/>
-    <label class="more"><a href="{:U('Travel/lists',array('cat_id'=>46))}">查看更多</a></label>
+    <label class="more"><a href="{:U('Travel/lists',array('cat_id'=>46))}">MORE</a></label>
 </div>
 <!--推荐详情-->
-<div class="row content-view-list">
+<div class="row content-view-list travel-yu">
     <volist name="yu_list" id="vo">
-        <div class="col-xs-2 foods-item">
-            <img class="img-lazy foods-img"
-                 src="__PUBLIC__/Home/images/loading.gif"
-                 data-original="{:get_cover($vo['cover_id'],'path')}"/>
+        <div class="col-xs-3 foods-item">
+            <a href="{:U('Travel/detail',array('id'=>$vo['id']))}">
+                <img class="img-lazy foods-img"
+                     src="__PUBLIC__/Home/images/loading.gif"
+                     data-original="{:get_cover($vo['cover_id'],'path')}"/>
+            </a>
         </div>
     </volist>
 </div>

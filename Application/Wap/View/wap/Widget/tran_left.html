@@ -1,0 +1,36 @@
+<div class="col-xs-4 main-left">
+    <div class="text-center">
+        <img src="__PUBLIC__/Home/images/traffic.png">
+        <!--hover-->
+        <eq name="type" value="1">
+            <h4 class="nav-menu-bar"><a class="active" href="{:U('Pages/transport?type=1')}">交通信息</a></h4>
+            <else/>
+            <h4 class="nav-menu-bar"><a href="{:U('Pages/transport?type=1')}">交通信息</a></h4>
+        </eq>
+        <eq name="type" value="2">
+            <h4 class="nav-menu-bar"><a class="active" href="{:U('Pages/transport?type=2')}">交通路线</a></h4>
+            <else/>
+            <h4 class="nav-menu-bar"><a href="{:U('Pages/transport?type=2')}">交通路线</a></h4>
+        </eq>
+        <eq name="type" value="3">
+            <h4 class="nav-menu-bar"><a class="active" href="{:U('Pages/transport?type=3')}">景区游览</a></h4>
+            <else/>
+            <h4 class="nav-menu-bar"><a href="{:U('Pages/transport?type=3')}">景区游览</a></h4>
+        </eq>
+    </div>
+    <div class="contact">
+        <div class="bg">
+            <p class="phone-title">联系电话:</p>
+            <div class="contact-item-1">
+                <img class="phone-img" src="__PUBLIC__/Home/images/icon-phone_2.png">
+                <span class="contact-detail phone">{:C('WEB_SITE_FUWUPHONE')}</span>
+            </div>
+            <div class="bottom-split-line"></div>
+            <p class="address-title">联系地址:</p>
+            <div class="contact-item-2">
+                <img class="position-img" src="__PUBLIC__/Home/images/icon-position.png">
+                <span class="contact-detail address">{:C('WEB_SITE_ADDRESS')}</span>
+            </div>
+        </div>
+    </div>
+</div>

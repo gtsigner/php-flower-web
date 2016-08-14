@@ -325,10 +325,8 @@ class DocumentModel extends Model
                 $map['category_id'] = array('in', str2arr($category));
             }
         }
-
         $map['create_time'] = array('lt', NOW_TIME);
         $map['_string'] = 'deadline = 0 OR deadline > ' . NOW_TIME;
-
         /* 设置推荐位 */
         if (is_numeric($pos)) {
             $map[] = "position & {$pos} = {$pos}";

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <include file="Public/head"/>
+    <style>
+        .container {
+            padding: 0px;
+        }
+
+        .row {
+            padding: 0px;
+            margin: 0px;
+        }
+        * {
+            font-family: 微软雅黑;
+        }
+
+        h1 {
+            letter-spacing: 4px;
+        }
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        tr td {
+            border: 2px solid white;
+        }
+
+        .row {
+            margin: 0px;
+        }
+
+        .more {
+            color: #06B534;
+        }
+
+        .text-green {
+            color: #06B534;
+        }
+
+        .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+            padding: 0px;
+        }
+
+        /**/
+
+        .container {
+            margin-top: -5px;
+        }
+
+        .main-view .header {
+            padding: 10px 20px;
+            background-color: #06B534;
+            color: #fff;
+        }
+        /**detail**/
+        body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<!-- 头部 -->
+<include file="Public/header"/>
+<!-- /头部 -->
+
+<!-- 主体 -->
+<div id="main-container" class="container">
+    <block name="body">
+
+    </block>
+</div>
+
+<!-- 底部 -->
+<include file="Public/footer"/>
+<!-- /底部 -->
+</body>
+</html>

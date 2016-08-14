@@ -1,0 +1,330 @@
+<extend name="Base/common"/>
+<block name="style">
+    <style>
+
+        .main-view .nav .header-one {
+            background-color: #2D96DF;
+            color: #fff;
+            padding: 8px;
+        }
+
+        .main-view .nav .header-one p {
+            color: #fff;
+            line-height: 20px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main-view .nav .header-one .zj-icon {
+            float: left;
+            height: 40px;
+            width: 40px;
+        }
+
+        .main-view .nav .header-one .zj-jq {
+            border-left: 1px solid #fff;
+            padding-left: 20px;
+        }
+
+        .main-view .nav .header-one .weather-box {
+            padding-left: 20px;
+        }
+
+        .main-view .nav .header-one .zj-jq p {
+            line-height: 40px;
+            font-size: 18px;
+            margin-left: 50px;
+        }
+
+        /*歌zi*/
+        .main-view .nav .zj-hd-index {
+            height: 100px;
+            background-color: #F1BC04;
+        }
+
+        .main-view .nav .zj-hd-index a {
+            line-height: 100px;
+            font-size: 20px;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-view .nav .zj-hd-news,
+        .main-view .nav .zj-hd-jqzk,
+        .main-view .nav .zj-hd-cyms,
+        .main-view .nav .zj-hd-jqdl,
+        .main-view .nav .zj-hd-jdzs,
+        .main-view .nav .zj-hd-xxyl,
+        .main-view .nav .zj-hd-lxwm {
+            height: 50px;
+            background-color: #06B534;
+            border-bottom: 1px solid #fff;
+            border-left: 1px solid #fff;
+        }
+
+        .main-view .nav .zj-hd-news img,
+        .main-view .nav .zj-hd-jqzk img,
+        .main-view .nav .zj-hd-cyms img,
+        .main-view .nav .zj-hd-jqdl img,
+        .main-view .nav .zj-hd-jdzs img,
+        .main-view .nav .zj-hd-xxyl img,
+        .main-view .nav .zj-hd-lxwm img {
+            height: 20px;
+            width: 20px;
+        }
+
+        .main-view .nav .zj-hd-news a,
+        .main-view .nav .zj-hd-jqzk a,
+        .main-view .nav .zj-hd-cyms a,
+        .main-view .nav .zj-hd-jqdl a,
+        .main-view .nav .zj-hd-jdzs a,
+        .main-view .nav .zj-hd-xxyl a,
+        .main-view .nav .zj-hd-lxwm a, .main-view .nav .zj-hd-jqgl a {
+            color: #fff;
+            line-height: 50px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-view .nav .zj-hd-jqgl {
+            background-color: #E95F04;
+            text-align: center;
+        }
+
+        .main-view .nav .zj-hd-jqgl img {
+            height: 25px;
+            width: 20px;
+        }
+
+        .main-view .detail {
+            margin-top: 10px;
+            border-top: 4px solid #969696;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .main-view .detail .box-title {
+            color: #06B534;
+            padding: 5px;
+        }
+
+        .main-view .detail .detail-header {
+            padding: 8px 10px;
+            font-size: 16px;
+            border-bottom: 2px solid #eee8d5;
+        }
+
+        .main-view .detail .detail-header img {
+            height: 25px;
+            width: 25px;
+        }
+
+        /***/
+        .main-view .detail .detail-content {
+            padding: 20px;
+        }
+
+        .main-view .detail .detail-footer {
+            border-top: 1px solid #c2c2c2;
+        }
+
+        .main-view .detail.detail-jchd .play-item {
+            border-bottom: 2px dotted #c2c2c2;
+            padding: 15px 0px;
+        }
+
+        /**2**/
+        .main-view .detail.detail-type-2 .head-article .article-desc {
+            font-size: 12px;
+            padding-left: 15px;
+
+        }
+
+        .main-view .detail.detail-type-2 .head-article .title {
+            font-size: 16px;
+            padding-left: 6px;
+        }
+
+        .main-view .detail.detail-type-2 .head-article {
+            padding-bottom: 10px;
+        }
+
+        .main-view .detail.detail-type-2 .gl-list li:first-child {
+            border-top: 3px dotted #eee;
+        }
+
+        .main-view .detail.detail-type-2 .gl-list li {
+            text-align: center;
+            border-bottom: 3px dotted #eee;
+            padding: 10px;
+        }
+
+    </style>
+</block>
+<block name="body">
+    <div class="main-view">
+        <!-- 标题 -->
+        <div class="header text-center">
+            <h3>宜宾长宁花漫淯江景区</h3>
+        </div>
+
+        <!-- 轮播图 -->
+        <div class="row">
+
+        </div>
+
+        <!-- 导航 -->
+        <nav class="nav">
+            <div class="row header-one">
+                <div class="col-xs-6 text-center weather-box">
+                    <a href="javascript:void(0);">
+                        <img class="img-responsive zj-icon" src="__PUBLIC__/Wap/images/tianqi.png"/>
+                        <p>景区天气</p>
+                        <p>多云26 ~ 30°C</p>
+                    </a>
+                </div>
+                <div class="col-xs-6 zj-jq">
+                    <a href="#">
+                        <img class="img-responsive zj-icon" src="__PUBLIC__/Wap/images/travel.png"/>
+                        <p>淯江景区</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="row zj-hd-index">
+                        <a href="__ROOT__/wap.php">
+                            <img src="__PUBLIC__/Wap/images/Home.png"/>
+                            <span>首页</span>
+                        </a>
+                    </div>
+                    <div class="row zj-hd-news">
+                        <a href="{:U('Article/news')}">
+                            <img src="__PUBLIC__/Wap/images/news.png"/>
+                            <span>景区新闻</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xs-4">
+                    <div class="row zj-hd-jqzk">
+                        <a href="{:U('Pages/state')}">
+                            <img class="zj-icon" src="__PUBLIC__/Wap/images/detail.png"/>
+                            <span>景区状况</span>
+                        </a>
+                    </div>
+                    <div class="row zj-hd-cyms">
+                        <a href="{:U('Article/eat')}">
+                            <img class="zj-icon" src="__PUBLIC__/Wap/images/eat.png"/>
+                            <span>餐饮美食</span>
+                        </a>
+                    </div>
+                    <div class="row zj-hd-jqdl">
+                        <a href="{:U('Article/play')}">
+                            <img class="zj-icon" src="__PUBLIC__/Wap/images/nav.png"/>
+                            <span>美景推荐</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="row zj-hd-jdzs">
+                        <a href="{:U('Article/live')}">
+                            <img class="zj-icon" src="__PUBLIC__/Wap/images/kaiche.png"/>
+                            <span>酒店住宿</span>
+                        </a>
+                    </div>
+                    <div class="row zj-hd-xxyl">
+                        <a href="{:U('Article/yu')}">
+                            <img class="zj-icon" src="__PUBLIC__/Wap/images/paly.png"/>
+                            <span>休闲娱乐</span>
+                        </a>
+                    </div>
+                    <div class="row zj-hd-lxwm">
+                        <a href="{:U('Article/contact')}">
+                            <img class="zj-icon" src="__PUBLIC__/Wap/images/tell.png"/>
+                            <span>联系我们</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row zj-hd-jqgl">
+                <a href="{:U('Article/strategy')}">
+                    <img src="__PUBLIC__/Wap/images/method.png"/>
+                    <span>景区攻略</span>
+                </a>
+            </div>
+        </nav>
+
+
+        <!-- 景区状况 -->
+        <div class="detail detail-jqzk">
+            <!-- 头部 -->
+            <div class="row">
+                <div class="detail-header">
+                    <img src="__PUBLIC__/Wap/images/logo_detail.png"/>
+                    <span class="box-title">景区概况</span>
+                </div>
+            </div>
+            <!-- 内容主体 -->
+            <div class="row">
+                <div class="detail-content">
+                    <p>
+                        长宁花海项目位于重庆渝北国家农业科技园区内，用地规模350亩，计划投资1亿元。总体定位为以欧洲田园浪漫生活方式
+                        为蓝本，以乡村农业体验、休闲、观光、现代农业展示为基础，打造有机、异域、浪漫、情调的欧式风情农业观光园。项
+                        目规划7个片区（迎宾服务展示区、欧式乡村田园体验区、生态湿地科普展示区、休闲度假区、生态植被保护区）。
+                    </p>
+                    <a class="more text-green" href="{:U('Pages/state')}">详细看看</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 精彩活动 -->
+        {:W('Index/hd')}
+
+        <!-- 景区美景 游-->
+        {:W('Index/play')}
+
+        <!-- 美食推荐 食-->
+        {:W('Index/eat')}
+
+        <!-- 休闲娱乐 娱-->
+        {:W('Index/yu')}
+
+        <!-- 景区导览 行-->
+        {:W('Index/walk')}
+
+
+        <!-- 旅游攻略 -->
+        {:W('Index/gl')}
+
+        <style>
+
+            .detail.contact .text-contact-box p {
+                font-size: 18px;
+            }
+
+        </style>
+        <!-- 联系我们 -->
+        <div class="detail contact">
+            <!-- 头部 -->
+            <div class="row">
+                <div class="detail-header">
+                    <img src="__PUBLIC__/Wap/images/logo_tell.png"/>
+                    <span class="box-title">联系我们</span>
+                </div>
+            </div>
+            <!-- 内容主体 -->
+            <div class="detail-content">
+                <div class="row">
+                    <div class="col-xs-12 text-contact-box">
+                        <p>电话：0831-2446879 </p>
+                        <p>地址：宜宾市长宁县长宁镇水井街王城2号</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

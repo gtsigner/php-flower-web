@@ -1,0 +1,66 @@
+<extend name="Base/common"/>
+
+
+<block name="body">
+    <style>
+
+
+        .main-view .article-main {
+        }
+
+        .main-view .article-main .head {
+            background-color: #00B83F;
+            color: #fff;
+            padding: 3px;
+            margin-top: 10px;
+        }
+
+        .main-view .article-main .article-list-item {
+            padding: 10px;
+        }
+
+        .main-view .article-main .article-list-item .item {
+            border-bottom: 1px solid #808282;
+            padding: 10px;
+        }
+
+        .main-view .article-main .article-list-item .article-title {
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        .main-view .article-main .article-list-item p {
+            margin: 0px;
+        }
+    </style>
+    <div class="main-view">
+        <!-- 标题 -->
+        <div class="header text-center">
+            <h4><span class="pull-left"
+                      onclick="window.history.go(-1);"><i
+                    class="glyphicon glyphicon-backward"></i></span>宜宾长宁花漫淯江景区</h4>
+        </div>
+        <div class="article-main">
+            <div class="head">
+                <h5>景区新闻</h5>
+            </div>
+            <div class="row">
+                <ul class="list-group list-unstyled">
+                    <volist name="data_list" id="vo">
+                        <li class="article-list-item">
+                            <div class="item">
+                                <a href="{:U('Article/detail',array('id'=>$vo['id']))}">
+                                    <h5 class="article-title"><span style="padding-right: 5px;">·</span>123</h5>
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;{$vo.description}
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</block>

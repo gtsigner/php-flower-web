@@ -9,6 +9,7 @@
 
 namespace Home\Controller;
 
+use Common\Helper\MobileHelper;
 use Think\Controller;
 
 /**
@@ -34,6 +35,13 @@ class HomeController extends Controller
         if (!C('WEB_SITE_CLOSE')) {
             $this->error('站点已经关闭，请稍后访问~');
         }
+
+        /**
+         * 只是首页才检查
+         */
+        if (strtolower(CONTROLLER_NAME) == 'index') {
+            $this->handleMobile();
+        }
     }
 
     /* 用户登录检测 */
@@ -43,4 +51,15 @@ class HomeController extends Controller
         is_login() || $this->error('您还没有登录，请先登录！', U('User/login'));
     }
 
+
+    /**
+     * 处理用户是手机访问
+     */
+    public function handleMobile()
+    {
+        if (MobileHelper::isMobile()) {
+            //跳转手机
+            redirect(__ROOT__ . "/wap.php");
+        }
+    }
 }

@@ -1,0 +1,42 @@
+<!--公告页面-->
+<extend name="Base/common"/>
+
+
+<block name="body">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .article-detail {
+            padding: 20px;
+        }
+
+        .article-content {
+            font-size: 12px;
+        }
+    </style>
+    <div class="main-view">
+        <!-- 标题 -->
+        <div class="header text-center">
+
+            <h4>
+                <span class="pull-right"
+                      onclick="window.history.go(-1);">
+                    <i class="glyphicon glyphicon-backward"></i>
+                </span>
+                宜宾长宁花漫淯江景区
+            </h4>
+        </div>
+
+        <div class="article-detail">
+            <h2 class="text-center">景区状况</h2>
+            <div class="article-content">{$detail.content}</div>
+        </div>
+
+        <div class="page">
+            {$page}
+        </div>
+    </div>
+</block>

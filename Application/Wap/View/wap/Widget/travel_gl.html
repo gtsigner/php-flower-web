@@ -1,0 +1,42 @@
+<div class="detail detail-type-2">
+    <!-- 头部 -->
+    <div class="row">
+        <div class="detail-header">
+            <img src="__PUBLIC__/Wap/images/logo_travel.png"/>
+            <span class="box-title">旅游攻略</span>
+        </div>
+    </div>
+    <!-- 内容主体 -->
+    <div class="detail-content">
+        <div class="row head-article">
+            <div class="col-xs-5">
+                <img class="img-responsive" src="__PUBLIC__/Wap/images/beauty_lit.png"/>
+            </div>
+            <div class="col-xs-7">
+                <a href="#" class="title">长宁旅游-徒步旅游篇</a>
+                <p class="article-desc">
+                    长宁旅游-徒步旅游篇长宁旅游-徒步旅游篇
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-group gl-list list-unstyled">
+                <volist name="data_list" id="vo" key="k">
+                    <php>
+                        if($k==0){
+                        continue;
+                        }
+                    </php>
+                    <li>
+                        <a href="{:U('Article/detail',array('id'=>$vo['id']))}">{$vo.title}</a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="detail-footer text-center">
+            <a href="#" class="more text-green"><h4>查看更多</h4></a>
+        </div>
+    </div>
+</div>

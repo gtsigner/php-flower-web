@@ -29,4 +29,10 @@ class PublicWidget extends Controller
         $this->assign("pid", $pid);
         $this->display("Widget/hidden_menu");
     }
+
+
+    public function showNewsTop()
+    {
+        $this->display('Article/widget/news_top');
+    }
 }

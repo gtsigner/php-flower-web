@@ -1,38 +1,408 @@
 <extend name="Base/common"/>
-
-<block name="header">
-    <header class="jumbotron subhead" id="overview">
-        <div class="container">
-            <h2>源自相同起点，演绎不同精彩！</h2>
-            <p class="lead"></p>
-        </div>
-    </header>
-</block>
-
 <block name="body">
-    <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
-            <article:list name="list" category="$category['id']" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$list.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$list['id'])}">查看全文</a></span>
-                    <span class="pull-right">
-                        <span class="author">{$list.uid|get_username}</span>
-                        <span>于 {$list.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($list['category_id']))}">{$list.category_id|get_category_title}</a></span> 
-                        <span>阅读( {$list.view} )</span>&nbsp;&nbsp;
-                    </span>
-                </div>
-                <hr/>
-            </article:list>
+    <style>
+        body {
+            background-color: #F3F3F1;
+        }
 
-        </section>
+        #main-container.container {
+            background-color: #F3F3F1;
+        }
+
+        h4 {
+            color: #000;
+        }
+
+        .container {
+            padding: 0px;
+        }
+
+        .container.banner {
+            width: 100%;
+        }
+
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .col-xs-1 {
+            padding: 0.5%;
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        .jq-news-lan-logo {
+            width: 170px;
+            height: 50px;
+            background-color: #D59E0D;
+            color: white;
+            font-family: 黑体;
+            letter-spacing: 2px;
+            font-size: 24px;
+            margin-left: -15px;
+            line-height: 50px;
+        }
+
+        .jq-news-lan-logo span {
+            margin-left: 20%;
+        }
+
+        .jq-news-lan-nav {
+            font-family: 微软雅黑;
+            text-align: right;
+            line-height: 50px;
+        }
+
+        .jq-news-lan-nav a {
+            letter-spacing: 1px;
+            color: black;
+            font-family: 微软雅黑;
+        }
+
+        .jq-news-lan-hr {
+            border: 1px solid rgba(128, 128, 128, 0.2);
+            margin-top: 0%;
+            margin-bottom: 1%;
+        }
+
+        .jq-news-travel-nav {
+            width: 100%;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        /*****/
+        .jq-news-travel-nav:hover {
+            background-color: #A00610;
+        }
+
+        .jq-news-travel-nav a {
+            color: black;
+            font-family: "黑体";
+            line-height: 15px;
+        }
+
+        .jq-news-travel-nav:hover a {
+            color: white;
+        }
+
+        .jq-news-travel-nav .img-logo {
+            position: absolute;
+            display: none;
+        }
+
+        .jq-news-travel-nav:hover .img-logo {
+            margin: 0 37.8%;
+            width: 14%;
+            display: block;
+        }
+
+        .jq-news-travel-nav.active .img-logo {
+            margin: 0 37.8%;
+            width: 14%;
+            display: block;
+        }
+
+        .jq-news-travel-nav.active a {
+            color: white;
+        }
+
+        .jq-news-travel-nav.active {
+            background-color: #A00610;
+        }
+
+        /*****/
+
+        .jq-news-travel-nav-show {
+            display: none;
+            height: 400px;
+            font-size: 14px;
+            text-align: left;
+            background: #F3F3F1;
+        }
+
+        .jq-news-travel-nav-show.active {
+            display: block;
+        }
+
+        .jq-news-travel-nav-show img {
+            height: 350px;
+            margin: 1.9%;
+        }
+
+        .jq-news-travel-nav-show h4:hover {
+            color: #ac0609;
+        }
+
+        .jq-news-travel-show ul {
+            font-family: 微软雅黑;
+            line-height: 25px;
+            list-style-type: none;
+        }
+
+        .jq-news-travel-show ul li h4 {
+            font-family: 黑体;
+            font-weight: bold;
+        }
+
+        .jq-news-content {
+            background: #F3F3F1;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .jq-news-content-show-details {
+            width: 50%;
+            float: left;
+            padding: 0 2%;
+        }
+
+        .jq-news-content-show-details-header h4 {
+            float: left;
+        }
+
+        .jq-news-content-show-details-header hr {
+            /*254,151,20*/
+            border: 1px dotted #FE9714;
+            float: left;
+            margin-left: 2%;
+            width: 78%;
+        }
+
+        .jq-news-content-show-details-header a {
+            line-height: 40px;
+            float: right;
+            color: #FE9714;
+        }
+
+        .jq-news-content-show-details-list {
+            width: 100%;
+        }
+
+        .jq-news-content-show-details-list a {
+            font-size: 14px;
+            color: #515151;
+            font-family: 微软雅黑;
+        }
+
+        .jq-news-content-show-details-list a:hover {
+            color: #ac0609;
+        }
+
+        .jq-news-content-show-details-list strong {
+            float: right;
+            margin-right: 3%;
+        }
+
+        .jq-news-content-show-details-list li {
+            float: left;
+            margin-left: -3%;
+            width: 105%;
+            line-height: 30px;
+        }
+
+        .jq-news-content-gd {
+            width: 100%;
+            height: 190px;
+            margin: 3% 0;
+            background-image: url('__PUBLIC__/Home/images/travel/jq-news-content-gd-bg.png');
+        }
+
+        .jq-news-content-gd img {
+            margin-top: -0.8%;
+            margin-left: 6%;
+            height: 210px;
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
+        .jq-news-content-gd-show {
+            width: 68%;
+            float: right;
+            margin-top: 1%;
+            margin-right: 2%;
+        }
+
+        .jq-news-content-gd-show span {
+            color: #E04906;
+            font-family: 微软雅黑;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        .jq-news-content-gd-show p {
+            color: #A97D08;
+            font-family: 微软雅黑;
+            font-size: 16px;
+            letter-spacing: 2px;
+            line-height: 26px;
+        }
+
+        .jq-news-content-gf {
+            width: 100%;
+            hieght: 110px;
+            margin-top: 40px;
+            float: left;
+
+            padding: 10px;
+            margin-bottom: 2%;
+            border: 2px solid rgba(128, 128, 128, 0.65);
+        }
+
+        .jq-news-content-gf-show {
+            text-align: center;
+            float: left;
+            width: 20%;
+        }
+
+        .jq-news-content-gf-show a {
+            color: black;
+            line-height: 35px;
+            letter-spacing: 1px;
+        }
+
+        .jq-news-content-gf-show img {
+            height: 115px;
+        }
+
+        .jq-news-content-gf-show a:hover {
+            color: #ac0609;
+        }
+    </style>
+
+
+    <div class="jq-news">
+
+        <!--景区动态和所在位置-->
+        <div class="row">
+            <div class="jq-news-lan">
+                <div class="col-xs-4">
+                    <div class="jq-news-lan-logo">
+                        <span>景区动态</span>
+                    </div>
+                </div>
+                <div class="col-xs-5 col-xs-offset-3">
+                    <div class="jq-news-lan-nav">
+                        <a>当前位置：</a> <a href="#"> 首页</a> > <a href="#">景区新闻</a> >
+                        <a href="#">景区动态</a> > <a href="#">花漫淯江</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="jq-news-lan-hr"/>
+
+        <!--景区新闻、旅游新闻等-->
+        <div class="row">
+            <div class="col-xs-1">
+                <div class="jq-news-travel-nav">
+                    <a class="change" href="{:U('Article/lists',array('category'=>48))}" data-toggle="show-1">景区新闻</a>
+                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <div class="jq-news-travel-nav">
+                    <a class="change" href="{:U('Article/lists',array('category'=>49))}" data-toggle="show-2">旅游新闻</a>
+                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <div class="jq-news-travel-nav">
+                    <a class="change" href="{:U('Article/lists',array('category'=>51))}" data-toggle="show-3">营销活动</a>
+                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <div class="jq-news-travel-nav">
+                    <a class="change" href="{:U('Article/lists',array('category'=>50))}" data-toggle="show-4">专题活动</a>
+                    <img class="img-logo" src="__PUBLIC__/Home/images/travel/sanjiao.png"/>
+                </div>
+            </div>
+        </div>
+
+        <!--内容页-->
+        <div class="jq-news-travel-nav-show active" id="show-1">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-img">
+                        <img src="__PUBLIC__/Home/images/travel/jq-news-travel-img.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="jq-news-travel-show">
+                        <ul>
+                            <volist name="news_list" id="vo">
+                                <li>
+                                    <a href="#"><h4 style="margin: 3px">{$vo.title}</h4></a>
+                                    <p style="margin: 0px;">{$vo.description}</p>
+                                </li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jq-news-content">
+            <div class="row">
+                <!--景区新闻-->
+                {:W('Article/news',array('cat_id'=>48))}
+                <!--旅游新闻-->
+                {:W('Article/news',array('cat_id'=>49))}
+            </div>
+            <!--过度的那个背景图片-->
+            <div class="jq-news-content-gd row">
+                <img src="__PUBLIC__/Home/images/travel/jq-news-content-gd-logo.png"/>
+                <div class="jq-news-content-gd-show">
+                    <span>花漫淯江采摘节</span>
+                    <p>金夏时节，菊海飘香，秋高气爽的季节正是亲子出游的好时机。生活在钢筋水泥浇筑的城市里的孩子，被阻隔在
+                        火柴盒式的高楼里，对大自然有着太多 太多的渴望，而收获季节里那充满生机的田野更是令人向往。
+                        孩子五彩斑 斓的童年，需要一种原汁原味的“大自然的绿色”，也需要“纯粹”的亲子体验来品味幸福、感受
+                        快乐。我们宝贵的乡土资源，是开放的充满生命力的课堂。为了丰富孩子们的生活经验，激发孩子热爱大自然、
+                        热爱家乡、热爱生活、热爱劳动的情感。</p>
+                </div>
+            </div>
+            <div class="row">
+                <!--营销活动-->
+                {:W('Article/news',array('cat_id'=>51))}
+                <!--专题活动-->
+                {:W('Article/news',array('cat_id'=>50))}
+            </div>
+            <!--官方新闻-->
+            <div class="jq-news-content-gf">
+                <div class="jq-news-content-gf-show">
+                    <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/><br/>
+                    <a href="#">长宁管理局看望县景区开发...</a>
+                </div>
+                <div class="jq-news-content-gf-show">
+                    <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/><br/>
+                    <a href="#">长宁管理局看望县景区开发...</a>
+                </div>
+                <div class="jq-news-content-gf-show">
+                    <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/><br/>
+                    <a href="#">长宁管理局看望县景区开发...</a>
+                </div>
+                <div class="jq-news-content-gf-show">
+                    <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/><br/>
+                    <a href="#">长宁管理局看望县景区开发</a>
+                </div>
+                <div class="jq-news-content-gf-show">
+                    <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/><br/>
+                    <a href="#">长宁管理局看望县景区开发...</a>
+                </div>
+            </div>
+        </div>
+        <script language="javascript">
+            $(function () {
+                $("a.change").bind('click', function () {
+//                    $(".jq-news-travel-nav-show.active").removeClass("active");
+//                    $(".jq-news-travel-nav.active").removeClass("active");
+//                    var toggle = $(this).attr("data-toggle");
+//                    console.log(toggle);
+//                    $(this).addClass("active");
+//                    $("#" + toggle).addClass("active");
+                });
+            })
+        </script>
     </div>
 </block>

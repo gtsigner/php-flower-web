@@ -1,5 +1,4 @@
 <!--IE探测-->
-
 <block name="header">
     <header class="header">
         <nav class="navbar navbar-default">
@@ -12,14 +11,12 @@
                 <ul class="nav navbar-nav">
                     <php>$pids=array();</php>
                     <think:nav name="nav">
-                        <!--爸爸-->
                         <eq name="nav.pid" value="0">
                             <li>
                                 <a data-id="{$nav.id}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>"
                                    data-toggle="show-child-menu" href="{$nav.url|get_nav_url}">
                                     <!--正常-->
                                     <div class="nav-title-first">{$nav.title}</div>
-                                    <div class="nav-title-show">Home</div>
                                 </a>
                             </li>
                         </eq>
@@ -49,8 +46,6 @@
         </script>
     </header>
 </block>
-
-
 <block name="banner">
     <!--轮播图-->
     <style>

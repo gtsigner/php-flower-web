@@ -1,0 +1,200 @@
+<extend name="Base/common"/>
+<!--旅游攻略-->
+<block name="body">
+    <style>
+        .container {
+            padding: 0px;
+        }
+
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .travel-method-location {
+            margin-top: 40px;
+            margin-left: -15px;
+            margin-bottom: 20px;
+        }
+
+        .travel-method-location a {
+            color: black;
+        }
+
+        .travel-method-nav {
+            width: 100%;
+            height: 47px;
+            background: #F3EFEC;
+            border-bottom: 4px solid #edb26e;
+        }
+
+        .travel-method-nav-show {
+            float: left;
+            width: 160px;
+            padding: 5px 10px;
+            text-align: center;
+            background: #F8CA96;
+        }
+
+        .travel-method-nav-show a {
+            letter-spacing: 4px;
+            color: #16023f;
+            font-size: 22px;
+            font-family: 黑体;
+            font-weight: bold;
+        }
+
+        .travel-method-nav-show:hover {
+            background: #E17A04;
+        }
+
+        .travel-method-nav-show:hover a {
+            color: white;
+        }
+
+        .travel-method-qh {
+            height: 400px;
+            background: snow;
+        }
+
+        .travel-method-dy {
+            height: 400px;
+            background: snow;
+        }
+
+        .travel-method-logo {
+            width: 150px;
+            height: 50px;
+            line-height: 48px;
+            margin: 10px 0;
+            font-family: 微软雅黑;
+            font-size: 25px;
+            letter-spacing: 5px;
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+            background: #C77A1E;
+        }
+
+        .travel-method-details {
+            height: 160px;
+            padding: 10px;
+        }
+
+        .travel-method-details-img img {
+            width: 220px;
+            height: 130px;
+        }
+
+        .travel-method-details-content {
+            letter-spacing: 3px;
+        }
+
+        .travel-method-details-content h4 a {
+            color: #DE2809;
+        }
+
+        .travel-method-details-content p {
+            font-family: 微软雅黑;
+            font-size: 14px;
+            line-height: 27px;
+
+        }
+
+        .travel-method-details-content p a {
+            color: #FAA552;
+        }
+
+        .travel-method-details-content p a:hover {
+            color: #DE2809;
+        }
+
+        .travel-method-details-hr {
+            margin-top: 0px;
+            width: 95.5%;
+            text-align: center;
+            border: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        .travel-method-fenye {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <!--所浏览的网页处于网站的位置-->
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="travel-method-location">
+                <a>当前位置：</a> <a href="#"> 首页</a> > <a href="#">旅游攻略</a> > <a href="#">花漫淯江</a>
+            </div>
+        </div>
+    </div>
+
+    <!--导航栏-->
+    <div class="row">
+        <div class="travel-method-nav">
+            <div class="travel-method-nav-show">
+                <a>自驾游</a>
+            </div>
+            <div class="travel-method-nav-show">
+                <a>自行游</a>
+            </div>
+            <div class="travel-method-nav-show">
+                <a>团队游</a>
+            </div>
+            <div class="travel-method-nav-show">
+                <a>旅游体验</a>
+            </div>
+        </div>
+    </div>
+
+    <!--切换框和导言-->
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="travel-method-qh">
+
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="travel-method-dy">
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--旅游攻略logo-->
+    <div class="row">
+        <div class="col-xs-1">
+            <div class="travel-method-logo">旅游攻略</div>
+        </div>
+    </div>
+
+    <!--旅游攻略详情-->
+    <volist name="list" id="vo">
+        <div class="row">
+            <div class="travel-method-details">
+                <div class="col-xs-3">
+                    <div class="travel-method-details-img">
+                        <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="travel-method-details-content">
+                        <h4><a href="#">【自驾游】{$vo.title}</a></h4>
+                        <p>
+                            {$vo.description}
+                            <a href="{:U('Article/detail',array('id'=>$vo['id']))}">[更多]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="travel-method-details-hr"/>
+        </div>
+    </volist>
+    <!--分页按钮-->
+    <div class="row page text-center">
+        {$page}
+    </div>
+</block>

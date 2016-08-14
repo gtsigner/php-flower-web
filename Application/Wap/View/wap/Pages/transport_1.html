@@ -1,0 +1,61 @@
+<!--公告页面-->
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/transport.css">
+</block>
+
+<block name="body">
+    <style>
+        .breadcrumb-head {
+            border-bottom: 2px solid #cacaca;
+        }
+
+        .main-body .map {
+            margin-top: 20px;
+        }
+
+        .main-body .message {
+            margin-top: 20px;
+            font-size: 18px;
+            padding-left: 20px;
+        }
+    </style>
+    <div class="row main-body">
+        <include file="Widget/tran_left"/>
+        <div class="col-xs-8 main-right">
+            <div class="breadcrumb-head">
+                <ul class="list-inline">
+                    <li><span>当前位置：</span></li>
+                    <li><a href="#">首页</a></li>
+                    <li><span>></span></li>
+                    <li><a href="#">交通信息</a></li>
+                    <li><span>></span></li>
+                    <li class="active">交通信息</li>
+                </ul>
+            </div>
+            <div class="map">
+                <img src="__PUBLIC__/Home/images/position-map.png">
+            </div>
+            <!--路线-->
+            <div class="message">
+                <p>
+                    路线指引->
+                    <br/>
+                    <br/>
+                    <br/>
+                    公交车路线：从南客站出发——长宁班线——到长宁之后在转乘长宁公交——城乡路线
+                    <br/>
+                    <br/>
+                    公交车路线：从南客站出发——长宁班线——到长宁之后在转乘长宁公交——城乡路线
+                    <br/>
+                    <br/>
+                    自驾车路线一：从宜宾南岸出发——经过南广桥往长宁方向——一段路之后上高速——快到达长宁时下高速——走
+                    快速通道
+                    <br/>
+                    <br/>
+                </p>
+            </div>
+        </div>
+    </div>
+</block>

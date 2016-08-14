@@ -14,6 +14,7 @@ namespace Home\Controller;
 use Home\Model\CategoryModel;
 use Home\Model\DocumentModel;
 use Think\Page;
+use Think\Verify;
 
 class TravelController extends HomeController
 {
@@ -23,8 +24,9 @@ class TravelController extends HomeController
     {
         //4个组件就行了
 
-        $this->display();
 
+
+        $this->display();
     }
 
 
@@ -39,13 +41,14 @@ class TravelController extends HomeController
         $map['status'] = 1;
         $pLimit = C("HOME_PAGE_LIMIT");
         $docModel = new DocumentModel();
+
+
         $totalCount = $docModel->listCount($map['category_id']);
         $pModel = new Page($totalCount, $pLimit);
         $docList = $docModel->lists($map['category_id'], $p, $pLimit);
+
         $cateModel = new CategoryModel();
         $cateInfo = $cateModel->info($map['category_id']);
-
-
         $this->assign('data_list', $docList);
         $this->assign('category', $cateInfo);
         $this->assign('page', $pModel->show());
@@ -61,6 +64,10 @@ class TravelController extends HomeController
 
         $catModel = new CategoryModel();
         $cateInfo = $catModel->info($detail['category_id']);
+
+        //访客数—+1
+        $docModel->where($map)->setInc('view');
+
         $this->assign('detail', $detail);
         $this->assign('category', $cateInfo);
         $this->display($cateInfo['template_detail']);

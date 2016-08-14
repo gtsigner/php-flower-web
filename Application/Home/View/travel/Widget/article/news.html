@@ -1,0 +1,13 @@
+<div class="jq-news-content-show-details col-xs-6">
+    <div class="jq-news-content-show-details-header">
+        <h4>{$w_category.title}</h4>
+        <span><hr/><a href="{:U('Article/lists',array('category'=>$w_category['id']))}">更多</a></span>
+    </div>
+    <div class="jq-news-content-show-details-list">
+        <ul>
+            <volist name="w_news_list" id="vo">
+                <li><a href="{:U('Article/detail',array('id'=>$vo['id']))}">{$vo.title}</a><strong>{$vo.create_time|date='Y-m-d H:m',###}</strong></li>
+            </volist>
+        </ul>
+    </div>
+</div>

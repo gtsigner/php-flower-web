@@ -1,0 +1,93 @@
+<!-- 底部
+================================================== -->
+<style>
+    footer .info {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    footer .nav .content {
+        background: #7F8084;
+        width: 100%;
+        text-align: center;
+        float: left;
+        z-index: 1000;
+    }
+
+    footer .icon-top {
+        text-align: center;
+        height: 30px;
+    }
+
+    footer .icon-top img {
+        width: 90px;
+    }
+
+    footer .nav .content .title {
+        font-size: 12px;
+        color: #fff;
+    }
+
+    footer .nav .content img {
+        height: 20px;
+        margin-top: 12px;
+    }
+
+    .col-xs-2-5 {
+        float: left;
+        width: 20%;
+        padding: 0px;
+    }
+</style>
+<div style="height: 100px;width: 100%"></div>
+<!-- 脚部信息 -->
+<footer class="footer">
+    <div class="nav navbar-fixed-bottom">
+        <div class="row icon-top">
+            <img src="__PUBLIC__/Wap/images/footer_img.png"/>
+        </div>
+        <div class="row">
+            <div class="content">
+                <div class="col-xs-2-5 right">
+                    <a href="tel:15760079693">
+                        <img src="__PUBLIC__/Wap/images/footer_tell.png"/>
+                        <p class="title">电话咨询</p>
+                    </a>
+                </div>
+                <div class="col-xs-2-5 right">
+                    <a href="#">
+                        <img src="__PUBLIC__/Wap/images/footer_play.png"/>
+                        <p class="title">吃喝玩乐</p>
+                    </a>
+                </div>
+                <div class="col-xs-2-5">
+                    <a href="__ROOT__/wap.php">
+                        <img src="__PUBLIC__/Wap/images/footer_home.png"/>
+                        <p class="title">主页</p>
+                    </a>
+                </div>
+                <div class="col-xs-2-5 left">
+                    <a href="#">
+                        <img src="__PUBLIC__/Wap/images/footer_travel.png"/>
+                        <p class="title">景区攻略</p>
+                    </a>
+                </div>
+                <div class="col-xs-2-5 left">
+                    <a href="#">
+                        <img src="__PUBLIC__/Wap/images/footer_nav.png"/>
+                        <p class="title">景区导览</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<include file="Public/var"/>
+<block name="script"></block> <!-- 用于加载js代码 -->
+<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
+{:hook('pageFooter', 'widget')}
+<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
+    <block name="hidden"></block>
+</div>

@@ -1,0 +1,7 @@
+<ul>
+    <volist name="hot_list" id="vo">
+        <li><a href="{:U('Article/detail',array('id'=>$vo['id']))}">{$vo.title}</a>
+            <small class="pull-right">访问:{$vo.view}</small>
+        </li>
+    </volist>
+</ul>
