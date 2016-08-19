@@ -43,18 +43,23 @@
         </div>
         <div class="article-main">
             <div class="head">
-                <h5>景区新闻</h5>
+                <h5>美食推荐</h5>
             </div>
             <div class="row">
                 <ul class="list-group list-unstyled">
                     <volist name="data_list" id="vo">
                         <li class="article-list-item">
-                            <div class="item">
+                            <div class="item row">
                                 <a href="{:U('Article/detail',array('id'=>$vo['id']))}">
-                                    <h5 class="article-title"><span style="padding-right: 5px;">·</span>123</h5>
-                                    <p>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;{$vo.description}
-                                    </p>
+                                    <div class="col-xs-5">
+                                        <img style="border: 2px solid #ff2f2f" class="img-responsive" src="{:get_cover($vo['cover_id'],'path')}">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <h4 style="margin-left: 10px;">{$vo.title}</h4>
+                                        <p style="margin-left: 5px">
+                                           {$vo.description}
+                                        </p>
+                                    </div>
                                 </a>
                             </div>
                         </li>

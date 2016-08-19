@@ -157,7 +157,7 @@ class ArticleController extends HomeController
         $this->assign('data_list', $list);
         $this->assign('page', $pModel->show());
 
-        $this->display("Article/lists/news");
+        $this->display("Article/lists/play");
     }
 
     /**
@@ -175,7 +175,7 @@ class ArticleController extends HomeController
         $this->assign('data_list', $list);
         $this->assign('page', $pModel->show());
 
-        $this->display("Article/lists/news");
+        $this->display("Article/lists/live");
     }
 
     /**
@@ -193,7 +193,7 @@ class ArticleController extends HomeController
         $this->assign('data_list', $list);
         $this->assign('page', $pModel->show());
 
-        $this->display("Article/lists/news");
+        $this->display("Article/lists/yu");
     }
 
     /**
@@ -211,7 +211,25 @@ class ArticleController extends HomeController
         $this->assign('data_list', $list);
         $this->assign('page', $pModel->show());
 
-        $this->display("Article/lists/news");
+        $this->display("Article/lists/eat");
+    }
+
+    /**
+     *进去导览
+     */
+    public function walk($p = 1, $cate = '44', $limit = 10)
+    {
+        $catModel = new CategoryModel();
+        $ids = $catModel->getChildrenId($cate);
+        $docModel = new DocumentModel();
+        $map['category_id'] = array('in', $ids);
+        $list = $docModel->where($map)->page($p, $limit)->select();
+        $count = $docModel->where($map)->count();
+        $pModel = new Page($count, $limit);
+        $this->assign('data_list', $list);
+        $this->assign('page', $pModel->show());
+
+        $this->display("Article/lists/walk");
     }
 
     /**

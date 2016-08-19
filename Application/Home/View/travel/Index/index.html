@@ -85,7 +85,7 @@
 
         .main-rowProgram .col-xs-3 img {
             height: auto;
-
+            cursor: pointer;
         }
 
         .main-rowProgram .col-xs-3 .title {
@@ -155,9 +155,8 @@
             color: #D34132;
         }
 
-        .main-rowNews {
+        .main-rowNews, .main-rowService, .main-rowTraffic {
             background-color: rgba(226, 234, 228, 0.92);
-            margin-top: 30px;
             padding-top: 20px;
             min-height: 300px;
         }
@@ -187,7 +186,7 @@
         }
     </style>
 
-    <div class="row main-rowMap">
+    <div class="row main-rowMap" style="margin-top: 5px;">
         <!-- 内容map左边 -->
         <div class="col-xs-4">
             <div class="rm-left">
@@ -228,7 +227,7 @@
     </div>
 
     <!-- 旅游项目 -->
-    <div class="row main-rowProgram">
+    <div class="row main-rowProgram" style="margin-top: 5px;">
         <div class="rp-background">
         </div>
         <!--标题通用-->
@@ -295,46 +294,54 @@
         </div>
 
         <!---->
-        <div class="col-xs-3">
-            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/programe-1.jpg">
-            <div class="title">
-                长宁公园
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/programe-2.jpg">
-            <div class="title">
-                长宁鲜花市场
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/programe-3.jpg">
-            <div class="title">
-                长宁植物园
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/programe-4.jpg">
-            <div class="title">
-                长宁花园
-            </div>
-        </div>
 
+        <php>
+
+            $map['id']=array('in',array('122','123','124','125'));
+            $myArticles=getSomeArticles($map);
+        </php>
+
+        <volist name="myArticles" id="vo" key="key">
+            <div class="col-xs-3 indexA-key" data-target="indexA-item-{$key}">
+                <a href="#">
+                    <img class="img-lazy img-responsive"
+                         src="__PUBLIC__/Home/images/loading.gif"
+                         data-original="{:get_cover($vo['cover_id'],'path')}">
+                    <div class="title" style="color: #000">
+                        {$vo.title}
+                    </div>
+                </a>
+            </div>
+        </volist>
     </div>
 
     <!--介绍-->
-    <div class="row main-rowDetail">
-        <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            长宁公园位于宜宾市长宁县长宁镇，占地32公顷，拥有“欧洲花园”之称。长宁公园建于2014年，种植药草香料等烹调食用的植物，因此将此地命名为“Keu
-            kenhof”，也就是英文中的keuken(厨房)和hof(花园)合起来之意。的景观设计以英式风格为主而雏型，直到1949年一群花农此地规划成一个开放空间的花卉公
-            园，至今已成为国际知名的花园典范，也是民众来荷兰阿姆斯特丹赏花的热门观光景点。每年3月初至6月，在这个世界上最大的郁金香公园所在地库肯霍夫会举办
-            盛大的郁金香花展。
-        </p>
+    <div class="row main-rowDetail" style="margin-top: 0px;">
+        <volist name="myArticles" id="vo" key="key">
+            <p class="indexA-item indexA-item-{$key}" style="display: none;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {$vo.description}
+            </p>
+        </volist>
     </div>
+    <script>
+
+        $(function () {
+            $(".indexA-item-1").show();//显示第一个
+            $(".indexA-key").hover(function () {
+                var cs = $(this).attr('data-target');
+                $(".indexA-item").hide();
+                $("." + cs + "").show();
+            });
+
+
+        });
+
+    </script>
+
 
     <!--特色-->
-    <div class="row main-rowSpecial">
+    <div class="row main-rowSpecial" style="margin-top: 5px;">
         <div class="rs-top">
         </div>
         <!--标题通用-->
@@ -430,7 +437,41 @@
         </div>
     </div>
 
-    <div class="row main-rowNews">
+
+    <style>
+        .main-rowNews .news-list {
+            margin: 20px 5px;
+        }
+
+        .main-rowNews .news-list li {
+            height: 60px;
+            background-color: #EDC594;
+            line-height: 60px;
+            cursor: pointer;
+            padding-left: 20px;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+
+        .main-rowNews .news-list li a {
+            color: #000;
+        }
+
+        .main-rowNews .news-list li:hover {
+            background-color: #bfbfbf;
+        }
+
+        .main-rowNews .news-list li:hover a {
+            color: #fff;
+        }
+
+        .main-rowNews .news-list img {
+            height: 260px;
+        }
+    </style>
+
+    <!---景区新闻-->
+    <div class="row main-rowNews" style="margin-top: 5px;">
         <!--标题通用-->
         <div class="top-title row">
             <div class="col-xs-5 bg-flower-left">
@@ -445,13 +486,225 @@
             </div>
         </div>
 
+        <div class="row news-list">
+
+            <div class="col-xs-3">
+                <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/special-2.png">
+            </div>
+            <div class="col-xs-3">
+                <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/index/special-2.png">
+            </div>
+            <div class="col-xs-6" style="margin-top: 10px">
+                <php>
+                    $indexNews=getIndexNews(4);
+                </php>
+                <ul class="list-unstyled list-group">
+                    <volist name="indexNews" id="vo">
+                        <li>
+                            <a>
+                                {$vo.title}
+                                <span style="font-size: 16px;padding-right: 10px;" class="pull-right">{$vo.create_time|date='Y-m-d',###}</span>
+                            </a>
+                        </li>
+                    </volist>
+
+                </ul>
+
+
+            </div>
+        </div>
+
 
     </div>
 
-    <div class="row main-rowService">
+    <style>
+
+
+        .main-rowService .big-title {
+            padding-left: 50px;
+            font-weight: 600;
+        }
+
+        .main-rowService .news-list .ticket .btn {
+            background-color: #5DB957;
+            margin: 20px 40px;
+            height: 60px;
+            line-height: 45px;
+            vertical-align: middle;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .main-rowService .news-list .ticket .btn:hover {
+            background-color: #53a651;
+        }
+    </style>
+    <div class="row main-rowService" style="margin-top: 5px;">
+        <!--标题通用-->
+        <div class="top-title row">
+            <div class="col-xs-5 bg-flower-left">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+            <div class="col-xs-2 title-center text-center">
+                <div class="title-en">SCENIC SERVICE</div>
+                <label class="title-zn">景区服务</label>
+            </div>
+            <div class="col-xs-5 bg-flower-right">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+        </div>
+
+        <div class="row news-list">
+
+            <div class="col-xs-3 ticket">
+                <div>
+                    <h3 class="big-title">票务信息</h3>
+                </div>
+                <div>
+                    <a href="{:U('Article/detail?id=127')}" class="btn btn-block">团购预订</a>
+                    <a href="{:U('Article/detail?id=128')}" class="btn btn-block">限时优惠</a>
+                    <a href="{:U('Article/detail?id=126')}" class="btn btn-block">订票指南</a>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div>
+                    <h3 class="big-title">旅游活动</h3>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="list-group list-unstyled">
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6">
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div>
+                    <h3 class="big-title">旅游攻略</h3>
+                </div>
+            </div>
+
+        </div>
 
     </div>
-    <div class="row main-rowTraffic">
 
+
+    <style>
+        .main-rowTraffic .content {
+            padding: 5px;
+            background: #fff;
+            margin: 20px 40px;
+        }
+
+        .main-rowTraffic .content .head-img img, .main-rowTraffic .content .right-content {
+            height: 350px;
+        }
+
+        .main-rowTraffic .content .right-content {
+            font-size: 14px;
+            padding: 20px;
+            background-color: #FDF1E3;
+        }
+
+        .main-rowTraffic .content .title {
+            font-size: 18px;
+        }
+    </style>
+    <div class="row main-rowTraffic" style="margin-top: 5px;">
+        <!--标题通用-->
+        <div class="top-title row">
+            <div class="col-xs-5 bg-flower-left">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+            <div class="col-xs-2 title-center text-center">
+                <div class="title-en">SCENIC TRAFFIC</div>
+                <label class="title-zn">交通路线</label>
+            </div>
+            <div class="col-xs-5 bg-flower-right">
+                <img class="img-responsive" src="__PUBLIC__/Home/images/index/bg-flower.png">
+            </div>
+        </div>
+
+        <div class="row content">
+            <div class="col-xs-7 head-img">
+                <img class="img-lazy img-responsive" src="__PUBLIC__/Home/images/position-map.png"
+                     data-original="__PUBLIC__/Home/images/position-map.png">
+            </div>
+            <div class="col-xs-5 right-content">
+                <div>
+                    <p class="title">路线指引：</p>
+                    <p>公交车路线：从南客站出发——长宁班线——到长宁之后在转乘长宁公交——城乡路线</p>
+                    <p>公交车路线：从南客站出发——长宁班线——到长宁之后在转乘长宁公交——城乡路线</p>
+                    <p>自驾车路线一：从宜宾南岸出发——经过南广桥往长宁方向——一段路之后上高速——快到达长宁时下高速——走 快速通道</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+
+        .row-FriendLink {
+            padding: 10px 0px;
+            background-color: rgba(226, 234, 228, 0.92);
+        }
+
+        .row-FriendLink .content {
+            min-height: 80px;
+            background-color: #FB812F;
+            padding: 10px;
+        }
+        .row-FriendLink .content ul{
+            text-align: center;
+            margin: 0px;
+        }
+        .row-FriendLink .content ul li {
+            border-right: 2px solid #fff;
+            margin-top: 10px;
+            padding: 0px 10px;
+        }
+        .row-FriendLink .content ul li:last-child{
+            border-right: 0px solid #fff;
+        }
+        .row-FriendLink .content ul li a {
+            color: #fff;
+            line-height: 20px;
+            font-size: 15px;
+        }
+    </style>
+    <div class="row row-FriendLink" style="margin-top: 5px">
+        <div class="content">
+            <h4 style="color: #fff;line-height: 20px;margin: 0px;">友情链接：</h4>
+            <ul class="list-unstyled list-inline">
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+            </ul>
+            <ul class="list-unstyled list-inline">
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+                <li><a href="#">宜宾花海</a></li>
+            </ul>
+        </div>
     </div>
 </block>

@@ -1,0 +1,349 @@
+<!--公告页面-->
+<extend name="Base/common"/>
+
+<block name="body">
+    <style type="text/css">
+
+
+        .logo_header {
+            width: 100%;
+            height: 100px;
+        }
+
+        .logo_header img {
+            width: 73.08px;
+            margin: 10px;
+            float: left;
+        }
+
+        .logo_header h1 {
+            font-family: 黑体;
+            font-weight: bold;
+            margin: 0 10px;
+            letter-spacing: 6px;
+            line-height: 100px;
+            float: left;
+        }
+
+        .logo_header h1 span {
+            color: #E1760D;
+        }
+
+        .pages .content {
+            width: 95%;
+            display: block;
+            letter-spacing: 3px;
+            margin: 10px auto;
+            line-height: 25px;
+            font-size: 14px;
+        }
+
+        .pages hr {
+            border-bottom: 2px solid #eee;
+        }
+
+        /*寿司*/
+        .shopdetail_body_shousi {
+            width: 100%;
+            padding-bottom: 20px;
+            padding-top: 10px;
+            height: 360px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .shopdetail_body_shousi_left {
+            float: left;
+            margin-left: 0px;
+            width: 50%;
+        }
+
+        .shopdetail_body_shousi_right {
+            width: 50%;
+            float: right;
+            margin-right: 0px;
+        }
+
+        .shopdetail_body_shousi_right img {
+            width: 100%;
+        }
+
+        /*竹笋*/
+
+        .shopdetail_body_zhusun {
+            height: 30%;
+            position: relative;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .shopdetail_body_zhusun > img {
+            margin-bottom: -4%;
+            width: 100%;
+        }
+
+        .shopdetail_body_zhusun .firstfont {
+            color: red;
+        }
+
+        /*大润发*/
+        .shopdetail_body_darunfa {
+            width: 100%;
+            padding-top: 20px;
+            height: 300px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .shopdetail_body_darunfa .firstfont {
+            color: #098AA0;
+        }
+
+        .shopdetail_body_darunfa_left {
+            float: left;
+            margin-left: 0px;
+            width: 35%;
+
+        }
+
+        .shopdetail_body_darunfa_left img {
+            width: 100%;
+        }
+
+        .shopdetail_body_darunfa_right {
+            width: 65%;
+            float: right;
+            margin-right: 0px;
+        }
+
+        /*老腊肉*/
+
+        .shopdetail_body_laolarou {
+            width: 100%;
+            padding-top: 20px;
+            height: 300px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .shopdetail_body_laolarou .firstfont {
+            color: #B3052E;
+        }
+
+        .shopdetail_body_laolarou_left {
+            float: left;
+            margin-left: 0px;
+            width: 63%;
+        }
+
+        .shopdetail_body_laolarou_left .footer {
+            margin-left: 2.5%;
+            margin-top: 5%;
+        }
+
+        .shopdetail_body_laolarou_left .footer span {
+            font-size: 18px;
+        }
+
+        .shopdetail_body_laolarou_right {
+            width: 37%;
+            float: right;
+            margin-right: 0px;
+        }
+
+        .shopdetail_body_laolarou_right img {
+            width: 100%;
+        }
+
+        /*盆景*/
+
+        .shopdetail_body_penjing {
+            width: 100%;
+            padding-top: 20px;
+            height: 330px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .shopdetail_body_penjing .fristfont {
+            color: #F67106;
+        }
+
+        .shopdetail_body_penjing .left {
+            float: left;
+            margin-left: 0px;
+            width: 31%;
+        }
+
+        .shopdetail_body_penjing .left img {
+            width: 100%;
+        }
+
+        .shopdetail_body_penjing .center {
+            float: left;
+            margin-left: 0px;
+            width: 53%;
+        }
+
+        .shopdetail_body_penjing .center .logo_header {
+            margin-left: -8%;
+        }
+
+        .shopdetail_body_penjing .center .content {
+            width: 102%;
+            margin-right: -5%;
+        }
+
+        .shopdetail_body_penjing .right {
+            float: right;
+            margin-left: 0px;
+            width: 16%;
+        }
+
+        .shopdetail_body_penjing .right img {
+            margin-top: 47.5%;
+            width: 100%;
+        }
+
+        /*博物馆*/
+
+        .shopdetail_body_museum {
+            width: 100%;
+        }
+
+        .shopdetail_body_museum .firstfont {
+            color: #7E5205;
+        }
+
+        .shopdetail_body_museum_left {
+            width: 52%;
+            margin-left: 0px;
+            float: left;
+        }
+
+        .shopdetail_body_museum_left .footer {
+            margin-left: 2.5%;
+            margin-top: 5%;
+        }
+
+        .shopdetail_body_museum_left .footer span {
+            font-size: 18px;
+        }
+
+        .shopdetail_body_museum_right {
+            width: 48%;
+            margin-left: 0px;
+            float: right;
+        }
+
+        .shopdetail_body_museum_right img {
+            width: 100%;
+        }
+
+
+    </style>
+
+    <div class="row pages">
+
+        <!-- 寿司 -->
+        <div class="shopdetail_body_shousi">
+            <div class="shopdetail_body_shousi_left">
+                <div class="logo_header">
+                    <img src="__PUBLIC__/Home/images/shops/gou.png">
+                    <h1><span class="firstfont">大禾</span>寿司</h1>
+                    <br/>
+                </div>
+                <div class="content">
+                    &nbsp;&nbsp;&nbsp;&nbsp;大禾寿司专注品牌20年，在全国先后拓展有60多家连锁店，形成可复制的成功商业模式，保障加盟事业低风险、高回报。产品七大类上百款，符合餐饮市场多元化需求。货源遍布世界各地，出品质量严格按照国家5S、HACC等标准实行，并配有高级营养师和研发人员，保障产品品质、革新力度、以及持续盈利。公司提供专业成熟的品牌运作技能、经营管理模式和管理实战经验等一系列培训，前期外派高级管理人员驻店指导，后期定期派遣专业人员下店查看经营情况并提出完善精进...
+                </div>
+            </div>
+            <div class="shopdetail_body_shousi_right">
+                <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/daheshousi.png" src="">
+            </div>
+        </div>
+
+
+        <!-- 竹笋 -->
+        <div class="shopdetail_body_zhusun">
+            <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/shunanzhusun.png">
+            <div class="logo_header">
+                <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/gou.png">
+                <h1><span class="firstfont">蜀南.</span>竹笋</h1>
+            </div>
+            <div class="content">&nbsp;&nbsp;&nbsp;&nbsp;竹笋是长宁又一大特色，初春第一场随风潜入夜的春雷春雨是蕴养一冬的雷竹笋破土而出，听上去就有种三林特有的朴素浪漫。这种过去山里人顺应天地之气的应季佳肴，在提倡绿色与健康的今天自然备受追捧，在瞬间就能将万物的鲜美都比下去了。
+            </div>
+        </div>
+
+
+        <div class="shopdetail_body_darunfa">
+
+            <div class="shopdetail_body_darunfa_left">
+                <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/darunfa.png">
+            </div>
+
+            <div class="shopdetail_body_darunfa_right">
+                <div class="logo_header">
+                    <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/gou.png">
+                    <h1><span class="firstfont">大润</span>发</h1>
+                </div>
+                <div class="content">
+                    &nbsp;&nbsp;&nbsp;&nbsp;说到像大润发这般的超市，你有一万种理由喜欢它，即使你在出门之前什么都没有准备，在这里你也能轻而易举地补充到你想要的东西，这里有来自国内外各种零食和饮料，总有你喜欢的，而景点里最昂贵的特产，在这里也变得平易近人，不管你只是逛逛，什么都不买，在当地这种文化环境下你也能渐渐地自然地熟悉起来。
+                </div>
+            </div>
+        </div>
+
+
+        <div class="shopdetail_body_laolarou">
+            <div class="shopdetail_body_laolarou_left">
+                <div class="logo_header">
+                    <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/gou.png">
+                    <h1><span class="firstfont">长宁</span>老腊肉</h1>
+                </div>
+                <div class="content">
+                    &nbsp;&nbsp;&nbsp;&nbsp;将宰杀的鲜土猪肉加盐、白酒、五香粉、辣椒等物进行腌制。以前四川各地乡民山民家中均烧柴灶，灶上备有挂架，利用灶口余温温水，进入腊月以后，将腌制好的肉挂在灶口的挂上，利用灶内的青烟上升去熏制，这样事半功倍。有的乡民还往灶中加入柏丫、桔皮、柚子壳等物，以此熏入特殊香味口感。城市居民自制腊肉时，需要自备土陶阔口大缸一口，熏制时，还需自制熏笼一处，火烧烟熏，非常繁琐…
+                </div>
+            </div>
+            <div class="shopdetail_body_laolarou_right">
+                <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/changninglaolarou.png">
+            </div>
+        </div>
+
+
+        <div class="shopdetail_body_penjing">
+            <div class="left">
+                <img class="img-lazy img-responsive"
+                     data-original="__PUBLIC__/Home/images/shops/changningpenjing_left.png"
+                     style="float:left;margin-top:4%;height:65%;">
+            </div>
+            <div class="center">
+                <div class="logo_header">
+                    <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/gou.png">
+                    <h1><span class="firstfont">川派</span>盆景</h1>
+                </div>
+                <div class="content">
+                    &nbsp;&nbsp;&nbsp;&nbsp;长宁镇的盆景极具有特色，具有很强的地域特色和造型特色，其树木盆景展示苍古雄奇特色，同时体现出壮若大树的精神内涵，其山水盆景展示四川山水的雄俊、高险，在气势上构成了高、悬、陡、深的大山大水景观，每日都有各色各样的花草盆景供选购。
+                </div>
+            </div>
+
+            <div class="right">
+                <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/changningpenjing3.png">
+            </div>
+        </div>
+
+
+        <div class="shopdetail_body_museum">
+            <div class="shopdetail_body_museum_left">
+                <div class="logo_header">
+                    <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/gou.png">
+                    <h1><span class="firstfont">乌木艺术</span>博物馆</h1>
+                </div>
+
+                <div class="content">
+                    &nbsp;&nbsp;&nbsp;&nbsp;乌木艺术博物馆占地70亩，是***艺术家投资创办的，主要是研究乌木文化，是对乌木挖掘和保护，对乌木艺术品收藏的民办博物馆，是巴蜀文化重要的代表之一，是中国文明及其重要的标志，是树文化循环规律的蓝本，帮助人们从身后的生态文化角度认识宜宾…
+                </div>
+            </div>
+            <div class="shopdetail_body_museum_right">
+                <img class="img-lazy img-responsive" data-original="__PUBLIC__/Home/images/shops/wumuyishuguan.png">
+            </div>
+        </div>
+
+    </div>
+</block>

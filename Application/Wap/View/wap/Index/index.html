@@ -1,5 +1,7 @@
 <extend name="Base/common"/>
 <block name="style">
+    <script type="text/javascript" src="__PUBLIC__/libs/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/libs/swiper/css/swiper.min.css">
     <style>
 
         .main-view .nav .header-one {
@@ -160,6 +162,29 @@
             padding: 10px;
         }
 
+        /***/
+
+        .col-xs-4.beauty_lit {
+            padding: 10px;
+        }
+
+        .swiper-slide {
+            height: 240px;
+        }
+
+        .swiper-slide img {
+            height: 240px;
+            width: 100%;
+        }
+
+        .swiper-container .swiper-pagination-bullet {
+            background-color: #fff;
+        }
+
+        .detail .title a{
+            font-size: 12px;
+            text-align: center;
+        }
     </style>
 </block>
 <block name="body">
@@ -171,160 +196,184 @@
 
         <!-- 轮播图 -->
         <div class="row">
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="img-responsive" src="__PUBLIC__/Home/images/banner/banner-1.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img-responsive" src="__PUBLIC__/Home/images/banner/banner-2.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img-responsive" src="__PUBLIC__/Home/images/banner/banner-2.png">
 
-        </div>
-
-        <!-- 导航 -->
-        <nav class="nav">
-            <div class="row header-one">
-                <div class="col-xs-6 text-center weather-box">
-                    <a href="javascript:void(0);">
-                        <img class="img-responsive zj-icon" src="__PUBLIC__/Wap/images/tianqi.png"/>
-                        <p>景区天气</p>
-                        <p>多云26 ~ 30°C</p>
-                    </a>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                        <span class="swiper-pagination-bullet"></span>
+                        <span class="swiper-pagination-bullet "></span>
+                        <span class="swiper-pagination-bullet"></span>
+                    </div>
                 </div>
-                <div class="col-xs-6 zj-jq">
-                    <a href="#">
-                        <img class="img-responsive zj-icon" src="__PUBLIC__/Wap/images/travel.png"/>
-                        <p>淯江景区</p>
-                    </a>
-                </div>
+                <script>
+                    var mySwiper = new Swiper('.swiper-container', {
+                        autoplay: 5000,//可选选项，自动滑动
+                    })
+                </script>
             </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <div class="row zj-hd-index">
-                        <a href="__ROOT__/wap.php">
-                            <img src="__PUBLIC__/Wap/images/Home.png"/>
-                            <span>首页</span>
-                        </a>
-                    </div>
-                    <div class="row zj-hd-news">
-                        <a href="{:U('Article/news')}">
-                            <img src="__PUBLIC__/Wap/images/news.png"/>
-                            <span>景区新闻</span>
-                        </a>
-                    </div>
-                </div>
 
-                <div class="col-xs-4">
-                    <div class="row zj-hd-jqzk">
-                        <a href="{:U('Pages/state')}">
-                            <img class="zj-icon" src="__PUBLIC__/Wap/images/detail.png"/>
-                            <span>景区状况</span>
+            <!-- 导航 -->
+            <nav class="nav">
+                <div class="row header-one">
+                    <div class="col-xs-6 text-center weather-box">
+                        <a href="javascript:void(0);">
+                            <img class="img-responsive zj-icon" src="__PUBLIC__/Wap/images/tianqi.png"/>
+                            <p>景区天气</p>
+                            <p>多云26 ~ 30°C</p>
                         </a>
                     </div>
-                    <div class="row zj-hd-cyms">
-                        <a href="{:U('Article/eat')}">
-                            <img class="zj-icon" src="__PUBLIC__/Wap/images/eat.png"/>
-                            <span>餐饮美食</span>
-                        </a>
-                    </div>
-                    <div class="row zj-hd-jqdl">
-                        <a href="{:U('Article/play')}">
-                            <img class="zj-icon" src="__PUBLIC__/Wap/images/nav.png"/>
-                            <span>美景推荐</span>
+                    <div class="col-xs-6 zj-jq">
+                        <a href="#">
+                            <img class="img-responsive zj-icon" src="__PUBLIC__/Wap/images/travel.png"/>
+                            <p>淯江景区</p>
                         </a>
                     </div>
                 </div>
-                <div class="col-xs-4">
-                    <div class="row zj-hd-jdzs">
-                        <a href="{:U('Article/live')}">
-                            <img class="zj-icon" src="__PUBLIC__/Wap/images/kaiche.png"/>
-                            <span>酒店住宿</span>
-                        </a>
-                    </div>
-                    <div class="row zj-hd-xxyl">
-                        <a href="{:U('Article/yu')}">
-                            <img class="zj-icon" src="__PUBLIC__/Wap/images/paly.png"/>
-                            <span>休闲娱乐</span>
-                        </a>
-                    </div>
-                    <div class="row zj-hd-lxwm">
-                        <a href="{:U('Article/contact')}">
-                            <img class="zj-icon" src="__PUBLIC__/Wap/images/tell.png"/>
-                            <span>联系我们</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row zj-hd-jqgl">
-                <a href="{:U('Article/strategy')}">
-                    <img src="__PUBLIC__/Wap/images/method.png"/>
-                    <span>景区攻略</span>
-                </a>
-            </div>
-        </nav>
-
-
-        <!-- 景区状况 -->
-        <div class="detail detail-jqzk">
-            <!-- 头部 -->
-            <div class="row">
-                <div class="detail-header">
-                    <img src="__PUBLIC__/Wap/images/logo_detail.png"/>
-                    <span class="box-title">景区概况</span>
-                </div>
-            </div>
-            <!-- 内容主体 -->
-            <div class="row">
-                <div class="detail-content">
-                    <p>
-                        长宁花海项目位于重庆渝北国家农业科技园区内，用地规模350亩，计划投资1亿元。总体定位为以欧洲田园浪漫生活方式
-                        为蓝本，以乡村农业体验、休闲、观光、现代农业展示为基础，打造有机、异域、浪漫、情调的欧式风情农业观光园。项
-                        目规划7个片区（迎宾服务展示区、欧式乡村田园体验区、生态湿地科普展示区、休闲度假区、生态植被保护区）。
-                    </p>
-                    <a class="more text-green" href="{:U('Pages/state')}">详细看看</a>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- 精彩活动 -->
-        {:W('Index/hd')}
-
-        <!-- 景区美景 游-->
-        {:W('Index/play')}
-
-        <!-- 美食推荐 食-->
-        {:W('Index/eat')}
-
-        <!-- 休闲娱乐 娱-->
-        {:W('Index/yu')}
-
-        <!-- 景区导览 行-->
-        {:W('Index/walk')}
-
-
-        <!-- 旅游攻略 -->
-        {:W('Index/gl')}
-
-        <style>
-
-            .detail.contact .text-contact-box p {
-                font-size: 18px;
-            }
-
-        </style>
-        <!-- 联系我们 -->
-        <div class="detail contact">
-            <!-- 头部 -->
-            <div class="row">
-                <div class="detail-header">
-                    <img src="__PUBLIC__/Wap/images/logo_tell.png"/>
-                    <span class="box-title">联系我们</span>
-                </div>
-            </div>
-            <!-- 内容主体 -->
-            <div class="detail-content">
                 <div class="row">
-                    <div class="col-xs-12 text-contact-box">
-                        <p>电话：0831-2446879 </p>
-                        <p>地址：宜宾市长宁县长宁镇水井街王城2号</p>
+                    <div class="col-xs-4">
+                        <div class="row zj-hd-index">
+                            <a href="__ROOT__/wap.php">
+                                <img src="__PUBLIC__/Wap/images/Home.png"/>
+                                <span>首页</span>
+                            </a>
+                        </div>
+                        <div class="row zj-hd-news">
+                            <a href="{:U('Article/news')}">
+                                <img src="__PUBLIC__/Wap/images/news.png"/>
+                                <span>景区新闻</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <div class="row zj-hd-jqzk">
+                            <a href="{:U('Pages/state')}">
+                                <img class="zj-icon" src="__PUBLIC__/Wap/images/detail.png"/>
+                                <span>景区状况</span>
+                            </a>
+                        </div>
+                        <div class="row zj-hd-cyms">
+                            <a href="{:U('Article/eat')}">
+                                <img class="zj-icon" src="__PUBLIC__/Wap/images/eat.png"/>
+                                <span>餐饮美食</span>
+                            </a>
+                        </div>
+                        <div class="row zj-hd-jqdl">
+                            <a href="{:U('Article/play')}">
+                                <img class="zj-icon" src="__PUBLIC__/Wap/images/nav.png"/>
+                                <span>美景推荐</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="row zj-hd-jdzs">
+                            <a href="{:U('Article/live')}">
+                                <img class="zj-icon" src="__PUBLIC__/Wap/images/kaiche.png"/>
+                                <span>酒店住宿</span>
+                            </a>
+                        </div>
+                        <div class="row zj-hd-xxyl">
+                            <a href="{:U('Article/yu')}">
+                                <img class="zj-icon" src="__PUBLIC__/Wap/images/paly.png"/>
+                                <span>休闲娱乐</span>
+                            </a>
+                        </div>
+                        <div class="row zj-hd-lxwm">
+                            <a href="{:U('Article/contact')}">
+                                <img class="zj-icon" src="__PUBLIC__/Wap/images/tell.png"/>
+                                <span>联系我们</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row zj-hd-jqgl">
+                    <a href="{:U('Article/strategy')}">
+                        <img src="__PUBLIC__/Wap/images/method.png"/>
+                        <span>景区攻略</span>
+                    </a>
+                </div>
+            </nav>
+
+
+            <!-- 景区状况 -->
+            <div class="detail detail-jqzk">
+                <!-- 头部 -->
+                <div class="row">
+                    <div class="detail-header">
+                        <img src="__PUBLIC__/Wap/images/logo_detail.png"/>
+                        <span class="box-title">景区概况</span>
+                    </div>
+                </div>
+                <!-- 内容主体 -->
+                <div class="row">
+                    <div class="detail-content">
+                        <p>
+                            长宁花海项目位于重庆渝北国家农业科技园区内，用地规模350亩，计划投资1亿元。总体定位为以欧洲田园浪漫生活方式
+                            为蓝本，以乡村农业体验、休闲、观光、现代农业展示为基础，打造有机、异域、浪漫、情调的欧式风情农业观光园。项
+                            目规划7个片区（迎宾服务展示区、欧式乡村田园体验区、生态湿地科普展示区、休闲度假区、生态植被保护区）。
+                        </p>
+                        <a class="more text-green" href="{:U('Pages/state')}">详细看看</a>
                     </div>
                 </div>
             </div>
 
+
+            <!-- 精彩活动 -->
+            {:W('Index/hd')}
+
+            <!-- 景区美景 游-->
+            {:W('Index/play')}
+
+            <!-- 美食推荐 食-->
+            {:W('Index/eat')}
+
+            <!-- 休闲娱乐 娱-->
+            {:W('Index/yu')}
+
+            <!-- 景区导览 行-->
+            {:W('Index/walk')}
+
+
+            <!-- 旅游攻略 -->
+            {:W('Index/gl')}
+
+            <style>
+
+                .detail.contact .text-contact-box p {
+                    font-size: 18px;
+                }
+
+            </style>
+            <!-- 联系我们 -->
+            <div class="detail contact">
+                <!-- 头部 -->
+                <div class="row">
+                    <div class="detail-header">
+                        <img src="__PUBLIC__/Wap/images/logo_tell.png"/>
+                        <span class="box-title">联系我们</span>
+                    </div>
+                </div>
+                <!-- 内容主体 -->
+                <div class="detail-content">
+                    <div class="row">
+                        <div class="col-xs-12 text-contact-box">
+                            <p>电话：0831-2446879 </p>
+                            <p>地址：宜宾市长宁县长宁镇水井街王城2号</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </block>

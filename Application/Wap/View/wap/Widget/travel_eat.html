@@ -1,4 +1,39 @@
-<div class="detail detail-jqfj">
+<div class="detail detail-jqfj style-type-1">
+    <style>
+
+        .style-type-1 .beauty_big img {
+            width: 100%;
+            height: 150px;
+        }
+
+
+        .style-type-1 .beauty_lit, .style-type-1 .beauty_big {
+            padding: 10px;
+            position: relative;
+        }
+
+        .style-type-1 .beauty_lit img {
+            width: 100%;
+            height: 100px;
+        }
+
+        .style-type-1 .beauty_big .picture_info, .style-type-1 .beauty_lit .picture_info {
+            position: relative;
+        }
+
+        .style-type-1 .beauty_big .picture_info .title, .style-type-1 .beauty_lit .picture_info .title {
+            position: absolute;
+            bottom: -10px;
+            height: 30px;
+            text-align: center;
+            width: 100%;
+            background-color: rgba(137, 137, 137, 0.63);
+            color: #fff;
+            line-height: 30px;
+            font-size: 11px;
+        }
+
+    </style>
     <!-- 头部 -->
     <div class="row">
         <div class="detail-header">
@@ -8,42 +43,52 @@
     </div>
     <!-- 内容主体 -->
     <div class="row">
-        <div class="detail-content">
-            <div class="col-xs-12 beauty_big">
-                <img class="img-responsive" src="__PUBLIC__/Wap/images/beauty_big.png"/>
-                <div class="picture_info">
-                    <p><a href="#">有一种美，叫做只属于夕阳湖之美！</a></p>
+        <div class="detail-content text-center">
+            <volist name="data_list" id="vo" key="k">
+                <php>
+                    if($k>1){
+                    break;
+                    }
+                </php>
+                <div class="col-xs-12 beauty_big">
+                    <a href="{:U('Article/detail',array('id'=>$vo['id']))}">
+                        <img class="img-lazy img-responsive"
+                             src="__PUBLIC__/Home/images/loading.gif"
+                             data-original="{:get_cover($vo['cover_id'],'path')}"/>
+                        <div class="picture_info">
+                            <p class="title">{$vo.title}</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
+            </volist>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-bottom: 10px">
         <div class="detail-content img-content">
-            <div class="col-xs-4 beauty_lit">
-                <img class="img-responsive" src="__PUBLIC__/Wap/images/beauty_lit.png"/>
-                <div class="picture_info">
-                    <p><a href="#">花园淯江，淯江花园</a></p>
+            <volist name="data_list" id="vo" key="k">
+                <php>
+                    if($k<=1){
+                    continue;
+                    }
+                </php>
+                <div class="col-xs-6 beauty_lit">
+                    <a href="{:U('Article/detail',array('id'=>$vo['id']))}">
+                        <img class="img-lazy img-responsive"
+                             src="__PUBLIC__/Home/images/loading.gif"
+                             data-original="{:get_cover($vo['cover_id'],'path')}"/>
+                        <div class="picture_info">
+                            <p class="title">{$vo.title}</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col-xs-4 beauty_lit">
-                <img class="img-responsive" src="__PUBLIC__/Wap/images/beauty_lit.png"/>
-                <div class="img-responsive" class="picture_info">
-                    <p><a href="#">花园淯江，淯江花园</a></p>
-                </div>
-            </div>
-            <div class="col-xs-4 beauty_lit">
-                <img class="img-responsive" src="__PUBLIC__/Wap/images/beauty_lit.png"/>
-                <div class="picture_info">
-                    <p><a href="#">花园淯江，淯江花园</a></p>
-                </div>
-            </div>
+            </volist>
         </div>
     </div>
 
     <div class="row">
         <div class="detail-footer text-center">
-            <a href="#" class="more text-green"><h4>查看更多</h4></a>
+            <a href="{:U('Article/eat')}" class="more text-green"><h4>查看更多</h4></a>
         </div>
     </div>
 </div>

@@ -9,21 +9,32 @@
     <!-- 内容主体 -->
     <div class="detail-content">
         <div class="row head-article">
-            <div class="col-xs-5">
-                <img class="img-responsive" src="__PUBLIC__/Wap/images/beauty_lit.png"/>
-            </div>
-            <div class="col-xs-7">
-                <a href="#" class="title">长宁旅游-徒步旅游篇</a>
-                <p class="article-desc">
-                    长宁旅游-徒步旅游篇长宁旅游-徒步旅游篇
-                </p>
-            </div>
+            <volist name="data_list" id="vo" key="k">
+                <php>
+                    if($k>1){
+                    break;
+                    }
+                </php>
+                <a href="{:U('Article/detail',array('id'=>$vo['id']))}">
+                    <div class="col-xs-5">
+                        <img class="img-lazy img-responsive"
+                             src="__PUBLIC__/Home/images/loading.gif"
+                             data-original="{:get_cover($vo['cover_id'],'path')}"/>
+                    </div>
+                    <div class="col-xs-7">
+                        <span class="title">{$vo.title}</span>
+                        <p class="article-desc">
+                            {$vo.description}
+                        </p>
+                    </div>
+                </a>
+            </volist>
         </div>
         <div class="row">
             <ul class="list-group gl-list list-unstyled">
                 <volist name="data_list" id="vo" key="k">
                     <php>
-                        if($k==0){
+                        if($k==1){
                         continue;
                         }
                     </php>
@@ -36,7 +47,7 @@
     </div>
     <div class="row">
         <div class="detail-footer text-center">
-            <a href="#" class="more text-green"><h4>查看更多</h4></a>
+            <a href="{:U('Article/strategy')}" class="more text-green"><h4>查看更多</h4></a>
         </div>
     </div>
 </div>

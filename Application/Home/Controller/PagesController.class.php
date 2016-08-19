@@ -45,4 +45,8 @@ class PagesController extends HomeController
         $this->display();
     }
 
+    public function shops()
+    {
+        $this->display();
+    }
 }

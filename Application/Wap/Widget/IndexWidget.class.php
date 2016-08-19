@@ -14,6 +14,7 @@ namespace Wap\Widget;
 
 use Home\Model\DocumentModel;
 use Think\Controller;
+use Wap\Model\CategoryModel;
 
 class IndexWidget extends Controller
 {
@@ -29,18 +30,18 @@ class IndexWidget extends Controller
         return $docList;
     }
 
-    public function eat($cat_id = 43, $count = 8)
+    public function eat($cat_id = 43, $count = 7)
     {
         $docList = $this->getData($cat_id, $count);
-        $this->assign('eat_list', $docList);
+        $this->assign('data_list', $docList);
         $this->display("Widget/travel_eat");
     }
 
     //游玩
-    public function play($cat_id = 42, $count = 3)
+    public function play($cat_id = 42, $count = 7)
     {
         $docList = $this->getData($cat_id, $count);
-        $this->assign('play_list', $docList);
+        $this->assign('data_list', $docList);
         $this->display("Widget/travel_play");
     }
 
@@ -48,7 +49,7 @@ class IndexWidget extends Controller
     public function live($cat_id = 47, $count = 4)
     {
         $docList = $this->getData($cat_id, $count);
-        $this->assign('live_list', $docList);
+        $this->assign('data_list', $docList);
         $this->display("Widget/travel_live");
     }
 
@@ -56,7 +57,7 @@ class IndexWidget extends Controller
     public function walk($cat_id = 44, $count = 2)
     {
         $docList = $this->getData($cat_id, $count);
-        $this->assign('walk_list', $docList);
+        $this->assign('data_list', $docList);
         $this->display("Widget/travel_walk");
     }
 
@@ -64,7 +65,7 @@ class IndexWidget extends Controller
     public function buy($cat_id = 45, $count = 4)
     {
         $docList = $this->getData($cat_id, $count);
-        $this->assign('buy_list', $docList);
+        $this->assign('data_list', $docList);
         $this->display("Widget/travel_buy");
     }
 
@@ -72,7 +73,7 @@ class IndexWidget extends Controller
     public function yu($cat_id = 46, $count = 6)
     {
         $docList = $this->getData($cat_id, $count);
-        $this->assign('yu_list', $docList);
+        $this->assign('data_list', $docList);
         $this->display("Widget/travel_yu");
     }
 
@@ -82,10 +83,14 @@ class IndexWidget extends Controller
 
     }
 
-    public function gl($cat_id = 42, $count = 6)
+    public function gl($cat_id = 41, $count = 6)
     {
-        $docList = $this->getData($cat_id, $count);
-        $this->assign('data_list', $docList);
+        $catModel = new CategoryModel();
+        $ids = $catModel->getChildrenId($cat_id);
+        $docModel = new DocumentModel();
+        $map['category_id'] = array('in', $ids);
+        $list = $docModel->where($map)->limit($count)->select();
+        $this->assign('data_list', $list);
         $this->display("Widget/travel_gl");
     }
 }

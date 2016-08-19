@@ -9,6 +9,10 @@ a {
     cursor: pointer;
 }
 
+.container {
+    min-width: 1170px;
+}
+
 a:focus {
     outline: none;
     text-decoration: none;
@@ -91,8 +95,6 @@ a:hover {
     line-height: 50px;
     font-family: 楷体;
 }
-
-
 
 .header .div-hidden {
     display: none;
@@ -236,8 +238,13 @@ a:hover {
 .breadcrumb-head {
     border-bottom: 1px solid #8f8d89;
     font-family: 楷体;
-    font-size: 13px;
-    padding: 0px 10px;
+    font-size: 16px;
+    padding: 10px 10px;
+
+}
+
+.breadcrumb-head a {
+    color: #8f8d89;
 }
 
 .breadcrumb-head .list-inline > li {
