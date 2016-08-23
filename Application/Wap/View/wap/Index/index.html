@@ -181,10 +181,11 @@
             background-color: #fff;
         }
 
-        .detail .title a{
+        .detail .title a {
             font-size: 12px;
             text-align: center;
         }
+
     </style>
 </block>
 <block name="body">
@@ -196,28 +197,25 @@
 
         <!-- 轮播图 -->
         <div class="row">
+            <php>$slider=getSlider();</php>
+
             <div class="swiper-container swiper-container-horizontal">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img class="img-responsive" src="__PUBLIC__/Home/images/banner/banner-1.png">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="img-responsive" src="__PUBLIC__/Home/images/banner/banner-2.png">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="img-responsive" src="__PUBLIC__/Home/images/banner/banner-2.png">
+                    <volist name="slider" id="vo">
+                        <div class="swiper-slide">
+                            <img class="img-responsive" src="{:get_cover($vo['silderpic'],'path')}">
+                        </div>
+                    </volist>
 
-                    </div>
-                    <!-- Add Pagination -->
                     <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
-                        <span class="swiper-pagination-bullet"></span>
-                        <span class="swiper-pagination-bullet "></span>
-                        <span class="swiper-pagination-bullet"></span>
+                        <volist name="slider" id="vo">
+                            <span class="swiper-pagination-bullet"></span>
+                        </volist>
                     </div>
                 </div>
                 <script>
                     var mySwiper = new Swiper('.swiper-container', {
-                        autoplay: 5000,//可选选项，自动滑动
+                        autoplay: 3000,//可选选项，自动滑动
                     })
                 </script>
             </div>

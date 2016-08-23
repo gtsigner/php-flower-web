@@ -12,8 +12,7 @@
         }
 
         .travel-method-location {
-            margin-top: 40px;
-            margin-left: -15px;
+            margin-top: 15px;
             margin-bottom: 20px;
         }
 
@@ -135,49 +134,56 @@
     <div class="row">
         <div class="travel-method-nav">
             <div class="travel-method-nav-show">
-                <a>自驾游</a>
+                <a href="{:U('Article/strategy?cate=53')}">自驾游</a>
             </div>
             <div class="travel-method-nav-show">
-                <a>自行游</a>
+                <a href="{:U('Article/strategy?cate=52')}">自行游</a>
             </div>
             <div class="travel-method-nav-show">
-                <a>团队游</a>
+                <a href="{:U('Article/strategy?cate=54')}">团队游</a>
             </div>
             <div class="travel-method-nav-show">
-                <a>旅游体验</a>
+                <a href="{:U('Article/strategy?cate=55')}">旅游体验</a>
             </div>
         </div>
     </div>
 
-    <!--切换框和导言-->
-    <div class="row">
-        <div class="col-xs-6">
-            <div class="travel-method-qh">
+    <!--&lt;!&ndash;切换框和导言&ndash;&gt;-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-6">-->
+    <!--<div class="travel-method-qh">-->
 
-            </div>
-        </div>
-        <div class="col-xs-6">
-            <div class="travel-method-dy">
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-6">-->
+    <!--<div class="travel-method-dy">-->
 
-            </div>
-        </div>
+    <!--</div>-->
+    <!--</div>-->
 
-    </div>
+    <!--</div>-->
 
-    <!--旅游攻略logo-->
-    <div class="row">
-        <div class="col-xs-1">
-            <div class="travel-method-logo">旅游攻略</div>
-        </div>
-    </div>
+    <!--&lt;!&ndash;旅游攻略logo&ndash;&gt;-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-1">-->
+    <!--<div class="travel-method-logo">旅游攻略</div>-->
+    <!--</div>-->
+    <!--</div>-->
 
     <!--旅游攻略详情-->
+    <empty name="list">
+        <div class="row text-center">
+            <h4>还有没最新的文章信息发布喔!!!</h4>
+        </div>
+    </empty>
     <volist name="list" id="vo">
         <div class="row">
             <div class="travel-method-details">
                 <div class="col-xs-3">
                     <div class="travel-method-details-img">
-                        <img src="__PUBLIC__/Home/images/travel/jq-news-content-gf-img.png"/>
+                        <img class="img-lazy img-responsive"
+                             src="__PUBLIC__/Home/images/loading.gif"
+                             data-original="{:get_cover($vo['cover_id'],'path')}">
                     </div>
                 </div>
                 <div class="col-xs-9">

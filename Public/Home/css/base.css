@@ -33,7 +33,7 @@ a:hover {
     margin-bottom: 0px;
     border: none;
     height: 100px;
-    background-color: #FFF7EF;
+    background-color: #fff;
     border-radius: 0px;
     z-index: 100;
     border-bottom: 1px solid #e7e7e7;
@@ -41,6 +41,7 @@ a:hover {
 
 .navbar .container {
     height: 100px;
+    padding: 0px;
 }
 
 .navbar .container .navbar-brand {
@@ -72,8 +73,8 @@ a:hover {
 .navbar .navbar-nav li {
     height: 80px;
     padding: 15px 10px;
-    background-color: #FFF7EF;
-    margin-left: 5px;
+    background-color: #fff;
+    margin-left: 20px;
 }
 
 .navbar .navbar-nav li > a {
@@ -81,7 +82,7 @@ a:hover {
     height: 50px;
     color: #383838;
     padding: 0px;
-    background-color: #FFF7EF;
+    background-color: #fff;
 }
 
 .navbar .navbar-nav li > a:hover {
@@ -90,10 +91,10 @@ a:hover {
 
 .navbar .navbar-nav li > a .nav-title-first {
     font-size: 22px;
-    padding-top: 5px;
+    padding-bottom: 3px;
     padding-left: 10px;
-    line-height: 50px;
-    font-family: 楷体;
+    line-height: 30px;
+    font-family: "Adobe 黑体 Std R";
 }
 
 .header .div-hidden {

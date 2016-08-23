@@ -49,12 +49,18 @@
                 <ul class="list-group list-unstyled">
                     <volist name="data_list" id="vo">
                         <li class="article-list-item">
-                            <div class="item">
+                            <div class="item row">
                                 <a href="{:U('Article/detail',array('id'=>$vo['id']))}">
-                                    <h5 class="article-title"><span style="padding-right: 5px;">·</span>{$vo.title}</h5>
-                                    <p>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;{$vo.description}
-                                    </p>
+                                    <div class="col-xs-5">
+                                        <img style="border: 2px solid #ff2f2f;height: 120px;" class="img-responsive"
+                                             src="{:get_cover($vo['cover_id'],'path')}">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <h4 style="margin-left: 10px;">{$vo.title}</h4>
+                                        <p class="zj-desc" style="margin-left: 5px;max-height: 50px;overflow: hidden;">
+                                            {$vo.description}
+                                        </p>
+                                    </div>
                                 </a>
                             </div>
                         </li>

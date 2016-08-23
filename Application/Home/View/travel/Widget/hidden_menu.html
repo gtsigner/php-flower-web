@@ -3,6 +3,7 @@
     <ul class="list-group list-inline">
         <volist name="menuList" id="vo">
             <li>
+
                 <a target="<eq name='vo.target' value='1'>_blank<else/>_self</eq>" href="{$vo.url|get_nav_url}">
                     {$vo.title}
                 </a>

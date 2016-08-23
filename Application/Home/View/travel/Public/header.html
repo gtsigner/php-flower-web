@@ -1,5 +1,13 @@
 <!--IE探测-->
+
+
 <block name="header">
+    <!--[if lt IE 11]>
+    <script>
+        window.location.href = 'http://cdn.dmeng.net/upgrade-your-browser.html?referrer=' + location.href;
+    </script>
+    <![endif]-->
+
     <header class="header">
         <nav class="navbar navbar-default">
             <div class="container">
@@ -17,6 +25,7 @@
                                    data-toggle="show-child-menu" href="{$nav.url|get_nav_url}">
                                     <!--正常-->
                                     <div class="nav-title-first">{$nav.title}</div>
+                                    <div class="nav-title-end">{$nav.eng_bottom}</div>
                                 </a>
                             </li>
                         </eq>
@@ -57,23 +66,27 @@
         }
     </style>
     <div class="container banner">
+        <php>$slider=getSlider();</php>
         <div id="banner" class="carousel slide row" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#banner" data-slide-to="0" class="active"></li>
-                <li data-target="#banner" data-slide-to="1"></li>
+                <volist name="slider" id="vo" key="k">
+                    <php>if($k==1){ $activeStr='active'; }else{ $activeStr=''; }</php>
+                    <li data-target="#banner" class="{$activeStr}" data-slide-to="{$k}"></li>
+                </volist>
             </ol>
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img class="bid-banner-img" src="__PUBLIC__/Home/images/banner/banner-1.png" alt="">
-                    <div class="carousel-caption">
+                <volist name="slider" id="vo" key="k">
+                    <php>if($k==1){ $activeStr='active'; }else{ $activeStr=''; }</php>
+                    <div class="item {$activeStr}">
+                        <a><img class="bid-banner-img"
+                                src="{:get_cover($vo['silderpic'],'path')}"
+                                alt="{$vo.sildertext}">
+                            <div class="carousel-caption">
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="item">
-                    <img class="bid-banner-img" src="__PUBLIC__/Home/images/banner/banner-2.png" alt="">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
+                </volist>
             </div>
             <!-- Controls -->
             <a class="left carousel-control" href="#banner" role="button" data-slide="prev">
@@ -87,4 +100,5 @@
         </div>
     </div>
 </block>
+
 

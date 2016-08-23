@@ -52,12 +52,14 @@
                             <div class="item row">
                                 <a href="{:U('Article/detail',array('id'=>$vo['id']))}">
                                     <div class="col-xs-5">
-                                        <img style="border: 2px solid #ff2f2f" class="img-responsive"
+                                        <img  style="border: 2px solid #ff2f2f;height: 120px;"
+                                             class="img-responsive"
                                              src="{:get_cover($vo['cover_id'],'path')}">
                                     </div>
                                     <div class="col-xs-7">
                                         <h4 style="margin-left: 10px;">{$vo.title}</h4>
-                                        <p style="margin-left: 5px">
+                                        <p class="zj-desc"
+                                           style="margin-left: 5px;height: 55px;overflow: hidden;text-overflow: ellipsis;">
                                             {$vo.description}
                                         </p>
                                     </div>

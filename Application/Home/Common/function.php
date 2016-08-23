@@ -7,15 +7,46 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://www.zjzit.cn>
 // +----------------------------------------------------------------------
 
-
-function getSomeArticles($map)
+function getSomeArticles($map, $count = 10)
 {
-    return M('document')->where($map)->select();
+    return M('document')->where($map)->limit($count)->select();
 }
 
 function getIndexNews($count)
 {
     $cate = '40';
+    $catModel = new \Home\Model\CategoryModel();
+    $ids = $catModel->getChildrenId($cate);
+    $docModel = new \Home\Model\DocumentModel();
+    $map['category_id'] = array('in', $ids);
+    return $docModel->where($map)->limit($count)->order('create_time desc')->select();
+}
+
+function getIndexViewSp($count)
+{
+    $cate = '57';
+    $catModel = new \Home\Model\CategoryModel();
+    $ids = $catModel->getChildrenId($cate);
+    $docModel = new \Home\Model\DocumentModel();
+    $map['category_id'] = array('in', $ids);
+    return $docModel->where($map)->limit($count)->order('create_time desc')->select();
+}
+
+
+function getIndexLvHdSp($count)
+{
+    $cate = '58';
+    $catModel = new \Home\Model\CategoryModel();
+    $ids = $catModel->getChildrenId($cate);
+    $docModel = new \Home\Model\DocumentModel();
+    $map['category_id'] = array('in', $ids);
+    return $docModel->where($map)->limit($count)->order('create_time desc')->select();
+}
+
+
+function getIndexStaregySp($count)
+{
+    $cate = '41';
     $catModel = new \Home\Model\CategoryModel();
     $ids = $catModel->getChildrenId($cate);
     $docModel = new \Home\Model\DocumentModel();
